@@ -13,6 +13,14 @@ repositories {
 def runeLiteVersion = 'latest.release'
 
 dependencies {
+
+	implementation ('io.socket:socket.io-client:2.1.0') {
+		exclude group: 'org.json', module: 'json'
+	}
+	testImplementation ('io.socket:socket.io-client:2.1.0') {
+		exclude group: 'org.json', module: 'json'
+	}
+	implementation 'com.google.code.gson:gson:2.8.9'
 	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
 
 	compileOnly 'org.projectlombok:lombok:1.18.20'
@@ -23,7 +31,8 @@ dependencies {
 	testImplementation group: 'net.runelite', name:'jshell', version: runeLiteVersion
 }
 
-group = 'com.example'
+
+group = 'com.iSully.TagGame'
 version = '1.0-SNAPSHOT'
 
 tasks.withType(JavaCompile) {

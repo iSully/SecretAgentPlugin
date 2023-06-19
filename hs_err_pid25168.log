@@ -1,0 +1,2337 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000000000000, pid=25168, tid=22404
+#
+# JRE version: Java(TM) SE Runtime Environment (20.0.1+9) (build 20.0.1+9-29)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.0.1+9-29, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [jdwp.dll+0x1611f]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=127.0.0.1:53268 -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant -ea com.iSully.TagGame.TagGamePluginTest
+
+Host: 13th Gen Intel(R) Core(TM) i9-13900K, 32 cores, 31G,  Windows 11 , 64 bit Build 22621 (10.0.22621.1778)
+Time: Mon Jun 19 10:50:37 2023 Central Daylight Time elapsed time: 7.263273 seconds (0d 0h 0m 7s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000028ff2325b30):  JavaThread "Client" daemon [_thread_in_native, id=22404, stack(0x000000e6a29a0000,0x000000e6a2aa0000)]
+
+Stack: [0x000000e6a29a0000,0x000000e6a2aa0000],  sp=0x000000e6a2a9d360,  free space=1012k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.lwjgl.system.MemoryUtil.nmemAlloc(J)J+0
+j  org.lwjgl.system.MemoryUtil.nmemAllocChecked(J)J+11
+j  org.lwjgl.system.MemoryUtil.memAlloc(I)Ljava/nio/ByteBuffer;+5
+j  org.lwjgl.system.windows.WindowsLibrary.getPath()Ljava/lang/String;+5
+j  org.lwjgl.system.Library.loadNativeFromSystem(Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary;+6
+j  org.lwjgl.system.Library.loadNative(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ZZ)Lorg/lwjgl/system/SharedLibrary;+371
+j  org.lwjgl.system.Library.loadNative(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)Lorg/lwjgl/system/SharedLibrary;+5
+j  org.lwjgl.system.Library.loadNative(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary;+4
+j  org.lwjgl.system.Library.loadNative(Ljava/lang/Class;Ljava/lang/String;Lorg/lwjgl/system/Configuration;Ljava/util/function/Supplier;[Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary;+59
+j  org.lwjgl.system.Library.loadNative(Ljava/lang/Class;Ljava/lang/String;Lorg/lwjgl/system/Configuration;[Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary;+5
+j  org.lwjgl.opengl.GL.create()V+114
+j  org.lwjgl.opengl.GL.<clinit>()V+71
+v  ~StubRoutines::call_stub 0x0000028fcd42100d
+j  rs117.hd.HdPlugin.lambda$startUp$2()Z+172
+j  rs117.hd.HdPlugin$$Lambda$1457+0x00000008015df0c8.getAsBoolean()Z+4
+J 3913 c1 net.runelite.client.callback.ClientThread.invokeList(Ljava/util/concurrent/ConcurrentLinkedQueue;)V (112 bytes) @ 0x0000028fc66bce84 [0x0000028fc66bc8a0+0x00000000000005e4]
+J 5214 c1 net.runelite.client.callback.Hooks.tick()V (122 bytes) @ 0x0000028fc6a06dc4 [0x0000028fc6a06a60+0x0000000000000364]
+J 5213 c1 client.pa()V (10 bytes) @ 0x0000028fc6a0467c [0x0000028fc6a045a0+0x00000000000000dc]
+j  client.bn(B)V+1
+J 5211 c1 ba.al(I)V (141 bytes) @ 0x0000028fc6a05144 [0x0000028fc6a04e80+0x00000000000002c4]
+j  ba.run()V+372
+j  java.lang.Thread.runWith(Ljava/lang/Object;Ljava/lang/Runnable;)V+5 java.base@20.0.1
+j  java.lang.Thread.run()V+19 java.base@20.0.1
+v  ~StubRoutines::call_stub 0x0000028fcd42100d
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), data execution prevention violation at address 0x0000000000000000
+
+
+Registers:
+RAX=0x0000028ff9b071a0, RBX=0x0000028ff65bf600, RCX=0x0000028ff2325e10, RDX=0x0000028ff65bf600
+RSP=0x000000e6a2a9d358, RBP=0x0000000000000002, RSI=0x000000e6a2a9d400, RDI=0x0000028ff2325e10
+R8 =0x0000000000010002, R9 =0x0000000000000000, R10=0x00007ff924260000, R11=0x000000e6a2a9d328
+R12=0x0000000000000007, R13=0x0000028fbc780400, R14=0x00007ff903a90300, R15=0x0000000000000000
+RIP=0x0000000000000000, EFLAGS=0x0000000000010206
+
+
+Register to memory mapping:
+
+RIP=0x0 is NULL
+RAX=0x0000028ff9b071a0 points into unknown readable memory: 0x0000000000000000 | 00 00 00 00 00 00 00 00
+RBX=0x0000028ff65bf600 points into unknown readable memory: 0x00000006033d35a0 | a0 35 3d 03 06 00 00 00
+RCX=0x0000028ff2325e10 points into unknown readable memory: 0x0000028ff9b071a0 | a0 71 b0 f9 8f 02 00 00
+RDX=0x0000028ff65bf600 points into unknown readable memory: 0x00000006033d35a0 | a0 35 3d 03 06 00 00 00
+RSP=0x000000e6a2a9d358 is pointing into the stack for thread: 0x0000028ff2325b30
+RBP=0x0000000000000002 is an unknown value
+RSI=0x000000e6a2a9d400 is pointing into the stack for thread: 0x0000028ff2325b30
+RDI=0x0000028ff2325e10 points into unknown readable memory: 0x0000028ff9b071a0 | a0 71 b0 f9 8f 02 00 00
+R8 =0x0000000000010002 is an unknown value
+R9 =0x0 is NULL
+R10=0x00007ff924260000 VCRUNTIME140.dll
+R11=0x000000e6a2a9d328 is pointing into the stack for thread: 0x0000028ff2325b30
+R12=0x0000000000000007 is an unknown value
+R13=0x0000028fbc780400 points into unknown readable memory: 0x00007ff8841ce370 | 70 e3 1c 84 f8 7f 00 00
+R14=0x00007ff903a90300 jdwp.dll
+R15=0x0 is NULL
+
+
+Top of Stack: (sp=0x000000e6a2a9d358)
+0x000000e6a2a9d358:   00007ff903a7611f 0000028ff65bf600
+0x000000e6a2a9d368:   000000e6a2a9d400 0000000000000000
+0x000000e6a2a9d378:   0000000000000000 00007ff8841c20b0
+0x000000e6a2a9d388:   0000000000005784 0000028ff26e1638
+0x000000e6a2a9d398:   00007ff903a90348 0000028ff65bf600
+0x000000e6a2a9d3a8:   00007ff903a7279f 0000028ff65bf600
+0x000000e6a2a9d3b8:   0000000000000002 0000028ff2325e10
+0x000000e6a2a9d3c8:   0000028ff65bf608 0000028ff2325b30
+0x000000e6a2a9d3d8:   00007ff883c1d4cd 0000000000000000
+0x000000e6a2a9d3e8:   0000028ff2806b40 000000e6a2a9d660
+0x000000e6a2a9d3f8:   00000008018b33f0 0000000000000007
+0x000000e6a2a9d408:   0000028ff65bf600 0000000000000000
+0x000000e6a2a9d418:   0000028ff65bf608 0000000000000000
+0x000000e6a2a9d428:   0000000000000000 0000000000000000
+0x000000e6a2a9d438:   0000000000000000 0000000000000000
+0x000000e6a2a9d448:   0000000000000000 0000000000000000
+0x000000e6a2a9d458:   0000028ff65bf600 00000008018b33f0
+0x000000e6a2a9d468:   00007ff883bf8f85 0000028ff65bf608
+0x000000e6a2a9d478:   0000028ff57d7b00 0000028ff2325b30
+0x000000e6a2a9d488:   00007ff883c1e6f5 0000028ff26e15f8
+0x000000e6a2a9d498:   00007ff883a48a26 0000028ff2325b30
+0x000000e6a2a9d4a8:   0000028fbc7908e0 0000028ff2325b30
+0x000000e6a2a9d4b8:   000000080060e6c0 0000028feaf7ab00
+0x000000e6a2a9d4c8:   0000028ff2806b30 0000028ff2806b40
+0x000000e6a2a9d4d8:   0000028ff2806f18 00000000000003d8
+0x000000e6a2a9d4e8:   0000028ff2325b30 0000028ff2325b30
+0x000000e6a2a9d4f8:   0000028feaf7a300 0000028ff25c2330
+0x000000e6a2a9d508:   0000028ff25c2398 0000028ff25c2418
+0x000000e6a2a9d518:   00000000000000d8 000000e6a2a9d530
+0x000000e6a2a9d528:   000000e6a2a9d660 0000028ff2325b30
+0x000000e6a2a9d538:   0000028feaf7a300 0000028ff25c2330
+0x000000e6a2a9d548:   0000028ff25c2398 0000028ff25c2418 
+
+Instructions: (pc=0x00007ff903a7611f)
+0x00007ff903a7601f:   2c 41 b8 61 02 00 00 48 8d 0d 6b 6f 01 00 48 8b
+0x00007ff903a7602f:   d3 e8 cb 50 00 00 41 8b cc e8 33 a0 ff ff 48 8b
+0x00007ff903a7603f:   d0 48 8d 0d 49 a4 01 00 e8 5c 51 00 00 4c 8b 4e
+0x00007ff903a7604f:   28 48 8d 0d 51 a4 01 00 4c 8b 46 20 48 8b 56 08
+0x00007ff903a7605f:   e8 00 0d 01 00 48 8b 05 c5 10 02 00 f6 80 10 02
+0x00007ff903a7606f:   00 00 02 74 28 41 b8 6a 02 00 00 48 8d 0d 83 63
+0x00007ff903a7607f:   01 00 48 8b d3 e8 77 50 00 00 48 8d 15 68 64 01
+0x00007ff903a7608f:   00 48 8d 0d 81 63 01 00 e8 0c 51 00 00 48 8b 07
+0x00007ff903a7609f:   48 8b cf ff 50 78 48 8b 0d 84 10 02 00 4c 8b f8
+0x00007ff903a760af:   f6 81 10 02 00 00 02 74 28 41 b8 6b 02 00 00 48
+0x00007ff903a760bf:   8d 0d 3f 63 01 00 48 8b d3 e8 33 50 00 00 48 8d
+0x00007ff903a760cf:   15 5c 64 01 00 48 8d 0d 3d 63 01 00 e8 c8 50 00
+0x00007ff903a760df:   00 48 8b 07 48 8b cf ff 90 88 00 00 00 83 3d f9
+0x00007ff903a760ef:   0b 02 00 00 76 0c e8 6e 5c ff ff 83 25 eb 0b 02
+0x00007ff903a760ff:   00 00 48 8b 5e 08 48 85 db 74 4b 48 8b 05 1f 10
+0x00007ff903a7610f:   02 00 80 78 13 00 74 0b 48 8b cb e8 a9 06 01 00
+0x00007ff903a7611f:   88 46 10 4d 8b c7 48 8b d6 41 8a ce e8 d8 a0 00
+0x00007ff903a7612f:   00 48 8b e8 48 85 c0 75 25 48 8b cb e8 c4 44 00
+0x00007ff903a7613f:   00 84 c0 0f 84 ea 00 00 00 48 8b d3 41 8a ce e8
+0x00007ff903a7614f:   ad 13 00 00 eb e3 e8 0e 0e 00 00 48 8b e8 4c 8b
+0x00007ff903a7615f:   cd 44 88 74 24 20 45 8b c4 48 8b d6 48 8b cf e8
+0x00007ff903a7616f:   e1 00 00 00 83 3e 14 75 0b 48 8b 05 b1 0f 02 00
+0x00007ff903a7617f:   c6 40 10 01 48 85 db 75 08 48 8b cd e8 ac 53 ff
+0x00007ff903a7618f:   ff 48 8b 05 99 0f 02 00 4d 85 ff 74 43 f6 80 10
+0x00007ff903a7619f:   02 00 00 02 74 2c 41 b8 b3 02 00 00 48 8d 15 96
+0x00007ff903a761af:   a1 01 00 48 8d 0d 4b 62 01 00 e8 42 4f 00 00 48
+0x00007ff903a761bf:   8d 15 db 7d 01 00 48 8d 0d 4c 62 01 00 e8 d7 4f
+0x00007ff903a761cf:   00 00 48 8b 07 49 8b d7 48 8b cf ff 50 68 eb 41
+0x00007ff903a761df:   f6 80 10 02 00 00 02 74 2c 41 b8 b5 02 00 00 48
+0x00007ff903a761ef:   8d 15 53 a1 01 00 48 8d 0d 08 62 01 00 e8 ff 4e
+0x00007ff903a761ff:   00 00 48 8d 15 28 63 01 00 48 8d 0d 09 62 01 00
+0x00007ff903a7620f:   e8 94 4f 00 00 48 8b 07 48 8b cf ff 90 88 00 00 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x0000028ff65bf600 points into unknown readable memory: 0x00000006033d35a0 | a0 35 3d 03 06 00 00 00
+stack at sp + 1 slots: 0x000000e6a2a9d400 is pointing into the stack for thread: 0x0000028ff2325b30
+stack at sp + 2 slots: 0x0 is NULL
+stack at sp + 3 slots: 0x0 is NULL
+stack at sp + 4 slots: 0x00007ff8841c20b0 jvm.dll
+stack at sp + 5 slots: 0x0000000000005784 is an unknown value
+stack at sp + 6 slots: 0x0000028ff26e1638 points into unknown readable memory: 0x8000000a00000001 | 01 00 00 00 0a 00 00 80
+stack at sp + 7 slots: 0x00007ff903a90348 jdwp.dll
+
+
+Compiled method (c1)    7305 3913   !   3       net.runelite.client.callback.ClientThread::invokeList (112 bytes)
+ total in heap  [0x0000028fc66bc610,0x0000028fc66bd9d8] = 5064
+ relocation     [0x0000028fc66bc758,0x0000028fc66bc890] = 312
+ main code      [0x0000028fc66bc8a0,0x0000028fc66bd488] = 3048
+ stub code      [0x0000028fc66bd488,0x0000028fc66bd530] = 168
+ oops           [0x0000028fc66bd530,0x0000028fc66bd540] = 16
+ metadata       [0x0000028fc66bd540,0x0000028fc66bd598] = 88
+ scopes data    [0x0000028fc66bd598,0x0000028fc66bd738] = 416
+ scopes pcs     [0x0000028fc66bd738,0x0000028fc66bd938] = 512
+ dependencies   [0x0000028fc66bd938,0x0000028fc66bd958] = 32
+ handler table  [0x0000028fc66bd958,0x0000028fc66bd9a0] = 72
+ nul chk table  [0x0000028fc66bd9a0,0x0000028fc66bd9d8] = 56
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Entry Point]
+  # {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread'
+  # this:     rdx:rdx   = 'net/runelite/client/callback/ClientThread'
+  # parm0:    r8:r8     = 'java/util/concurrent/ConcurrentLinkedQueue'
+  #           [sp+0xa0]  (sp of caller)
+  0x0000028fc66bc8a0: 448b 5208 | 49bb 0000 | 0000 0800 | 0000 4d03 | d34c 3bd0 
+
+  0x0000028fc66bc8b4: ;   {runtime_call ic_miss_stub}
+  0x0000028fc66bc8b4: 0f85 4675 | dc06 660f | 1f44 0000 
+[Verified Entry Point]
+  0x0000028fc66bc8c0: 8984 2400 | 80ff ff55 | 4881 ec90 | 0000 0090 | 4181 7f20 | 0700 0000 
+
+  0x0000028fc66bc8d8: ;   {runtime_call StubRoutines (2)}
+  0x0000028fc66bc8d8: 7405 e801 
+
+  0x0000028fc66bc8dc: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bc8dc: 78dd 0648 | be78 faea | e78f 0200 | 008b becc | 0000 0083 | c702 89be | cc00 0000 | 81e7 fe07 
+  0x0000028fc66bc8fc: 0000 83ff | 000f 846b 
+
+  0x0000028fc66bc904: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bc904: 0900 0048 | be78 faea | e78f 0200 | 00ff 8620 | 0100 008b | 7214 48c1 | e603 4883 | fe00 0f84 
+  0x0000028fc66bc924: 2800 0000 
+
+  0x0000028fc66bc928: ;   {metadata('client')}
+  0x0000028fc66bc928: 48bb 0080 | 3001 0800 | 0000 8b46 | 0849 ba00 | 0000 0008 | 0000 0049 | 03c2 483b | d80f 8548 
+  0x0000028fc66bc948: 0900 00e9 | 0000 0000 | 488b fe48 | 3b06 488b 
+
+  0x0000028fc66bc958: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bc958: fe48 b878 | faea e78f | 0200 008b | 7f08 49ba | 0000 0000 | 0800 0000 | 4903 fa48 | 3bb8 4001 
+  0x0000028fc66bc978: 0000 750d | 4883 8048 | 0100 0001 | e960 0000 | 0048 3bb8 | 5001 0000 | 750d 4883 | 8058 0100 
+  0x0000028fc66bc998: 0001 e94a | 0000 0048 | 83b8 4001 | 0000 0075 | 1748 89b8 | 4001 0000 | 48c7 8048 | 0100 0001 
+  0x0000028fc66bc9b8: 0000 00e9 | 2900 0000 | 4883 b850 | 0100 0000 | 7517 4889 | b850 0100 | 0048 c780 | 5801 0000 
+  0x0000028fc66bc9d8: 0100 0000 | e908 0000 | 0048 8380 | 3001 0000 
+
+  0x0000028fc66bc9e8: ;   {metadata(method data for {method} {0x0000028fe7265ac0} 'isClientThread' '()Z' in 'ba')}
+  0x0000028fc66bc9e8: 0148 bfe8 | b4e7 e78f | 0200 008b | 87cc 0000 | 0083 c002 | 8987 cc00 | 0000 25fe | ff1f 0083 
+  0x0000028fc66bca08: f800 0f84 | 8d08 0000 | 8bb6 5401 | 0000 48c1 
+
+  0x0000028fc66bca18: ;   {metadata(method data for {method} {0x0000028fe7265ac0} 'isClientThread' '()Z' in 'ba')}
+  0x0000028fc66bca18: e603 48bf | e8b4 e7e7 | 8f02 0000 | 4883 8710 | 0100 0001 | 498b bfa8 | 0200 0048 | 8b3f 483b 
+  0x0000028fc66bca38: ;   {metadata(method data for {method} {0x0000028fe7265ac0} 'isClientThread' '()Z' in 'ba')}
+  0x0000028fc66bca38: f748 bee8 | b4e7 e78f | 0200 0048 | bf20 0100 | 0000 0000 | 000f 850a | 0000 0048 | bf30 0100 
+  0x0000028fc66bca58: 0000 0000 | 0048 8b04 | 3e48 8d40 | 0148 8904 | 3e0f 851a 
+
+  0x0000028fc66bca6c: ;   {metadata(method data for {method} {0x0000028fe7265ac0} 'isClientThread' '()Z' in 'ba')}
+  0x0000028fc66bca6c: 0000 0048 | bee8 b4e7 | e78f 0200 | 00ff 8640 | 0100 00be | 0100 0000 | e905 0000 | 00be 0000 
+  0x0000028fc66bca8c: 0000 83e6 | 0183 fe00 
+
+  0x0000028fc66bca94: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bca94: 48be 78fa | eae7 8f02 | 0000 48bf | 7801 0000 | 0000 0000 | 0f84 0a00 | 0000 48bf | 6801 0000 
+  0x0000028fc66bcab4: 0000 0000 | 488b 043e | 488d 4001 | 4889 043e | 0f84 bf06 | 0000 4889 | 5424 5049 | 3b00 498b 
+  0x0000028fc66bcad4: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bcad4: f048 bf78 | faea e78f 
+
+  0x0000028fc66bcadc: ;   {metadata('java/util/concurrent/ConcurrentLinkedQueue')}
+  0x0000028fc66bcadc: 0200 0049 | ba90 8215 | 0108 0000 | 004c 8997 | a801 0000 | 4883 87b0 | 0100 0001 
+
+  0x0000028fc66bcaf8: ;   {metadata(method data for {method} {0x0000028fe6611978} 'iterator' '()Ljava/util/Iterator;' in 'java/util/concurrent/ConcurrentLinkedQueue')}
+  0x0000028fc66bcaf8: 48be 30e4 | dee7 8f02 | 0000 8bbe | cc00 0000 | 83c7 0289 | becc 0000 | 0081 e7fe | ff1f 0083 
+  0x0000028fc66bcb18: ff00 0f84 | a307 0000 
+
+  0x0000028fc66bcb20: ;   {metadata('java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bcb20: 48ba 4826 | 2f01 0800 | 0000 498b | 87f8 0000 | 0048 8d78 | 2049 3bbf | 0801 0000 | 0f87 a207 
+  0x0000028fc66bcb40: 0000 4989 | bff8 0000 | 0048 c700 | 0100 0000 | 488b ca49 | ba00 0000 | 0008 0000 | 0049 2bca 
+  0x0000028fc66bcb60: 8948 0848 | 33c9 8948 | 0c48 33c9 | 4889 4810 | 4889 4818 | 4889 4424 | 4048 8bd0 
+
+  0x0000028fc66bcb7c: ;   {metadata(method data for {method} {0x0000028fe6611978} 'iterator' '()Ljava/util/Iterator;' in 'java/util/concurrent/ConcurrentLinkedQueue')}
+  0x0000028fc66bcb7c: 48be 30e4 | dee7 8f02 | 0000 4883 | 8610 0100 | 0001 498b | f04c 8bc6 | 488b d048 | 8974 2448 
+  0x0000028fc66bcb9c: ;   {optimized virtual_call}
+  0x0000028fc66bcb9c: 6666 90e8 
+
+  0x0000028fc66bcba0: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop }
+                      ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.concurrent.ConcurrentLinkedQueue::iterator@5 (line 729)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@27 (line 112)
+  0x0000028fc66bcba0: fce8 ffff | 0f1f 4000 | 488b 4424 | 4048 8bd0 
+
+  0x0000028fc66bcbb0: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bcbb0: 48be 78fa | eae7 8f02 
+
+  0x0000028fc66bcbb8: ;   {metadata('java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bcbb8: 0000 49ba | 4826 2f01 | 0800 0000 | 4c89 96e0 | 0100 0048 | 8386 e801 
+
+  0x0000028fc66bcbd0: ;   {metadata(method data for {method} {0x0000028fe7da2818} 'hasNext' '()Z' in 'java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bcbd0: 0000 0148 | ba68 e8de | e78f 0200 | 008b b2cc | 0000 0083 | c602 89b2 | cc00 0000 | 81e6 feff 
+  0x0000028fc66bcbf0: 1f00 83fe | 000f 84f6 | 0600 008b | 5010 48c1 | e203 4883 
+
+  0x0000028fc66bcc04: ;   {metadata(method data for {method} {0x0000028fe7da2818} 'hasNext' '()Z' in 'java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bcc04: fa00 48ba | 68e8 dee7 | 8f02 0000 | 48be 1001 | 0000 0000 | 0000 0f84 | 0a00 0000 | 48be 2001 
+  0x0000028fc66bcc24: 0000 0000 | 0000 488b | 3c32 488d | 7f01 4889 | 3c32 0f84 | 1a00 0000 
+
+  0x0000028fc66bcc3c: ;   {metadata(method data for {method} {0x0000028fe7da2818} 'hasNext' '()Z' in 'java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bcc3c: 48ba 68e8 | dee7 8f02 | 0000 ff82 | 3001 0000 | ba01 0000 | 00e9 0500 | 0000 ba00 | 0000 0083 
+  0x0000028fc66bcc5c: e201 83fa 
+
+  0x0000028fc66bcc60: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bcc60: 0048 ba78 | faea e78f | 0200 0048 | be08 0200 | 0000 0000 | 000f 840a | 0000 0048 | be18 0200 
+  0x0000028fc66bcc80: 0000 0000 | 0048 8b3c | 3248 8d7f | 0148 893c | 320f 843c | 0400 0048 
+
+  0x0000028fc66bcc98: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bcc98: 8bd0 48be | 78fa eae7 | 8f02 0000 
+
+  0x0000028fc66bcca4: ;   {metadata('java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bcca4: 49ba 4826 | 2f01 0800 | 0000 4c89 | 9638 0200 | 0048 8386 | 4002 0000 | 0148 8bd0 | 0f1f 8000 
+  0x0000028fc66bccc4: ;   {optimized virtual_call}
+  0x0000028fc66bccc4: 0000 00e8 
+
+  0x0000028fc66bccc8: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop }
+                      ;*invokeinterface next {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@41 (line 115)
+  0x0000028fc66bccc8: 54c9 3300 | 4883 f800 
+
+  0x0000028fc66bccd0: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bccd0: 7516 48bf | 78fa eae7 | 8f02 0000 | 808f 5902 | 0000 01e9 | e800 0000 
+
+  0x0000028fc66bcce8: ;   {metadata('java/util/function/BooleanSupplier')}
+  0x0000028fc66bcce8: 48bb 48b8 | 2701 0800 | 0000 8b78 | 0849 ba00 | 0000 0008 | 0000 0049 | 03fa 483b | 5f20 0f84 
+  0x0000028fc66bcd08: 1b00 0000 | 483b fb0f | 8412 0000 
+
+  0x0000028fc66bcd14: ;   {runtime_call slow_subtype_check Runtime1 stub}
+  0x0000028fc66bcd14: 0057 53e8 | e48e e906 | 5f5f 83ff | 000f 848d 
+
+  0x0000028fc66bcd24: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bcd24: 0000 0048 | bf78 faea | e78f 0200 | 008b 5808 | 49ba 0000 | 0000 0800 | 0000 4903 | da48 3b9f 
+  0x0000028fc66bcd44: 7002 0000 | 750d 4883 | 8778 0200 | 0001 e979 | 0000 0048 | 3b9f 8002 | 0000 750d | 4883 8788 
+  0x0000028fc66bcd64: 0200 0001 | e963 0000 | 0048 83bf | 7002 0000 | 0075 1748 | 899f 7002 | 0000 48c7 | 8778 0200 
+  0x0000028fc66bcd84: 0001 0000 | 00e9 4200 | 0000 4883 | bf80 0200 | 0000 7517 | 4889 9f80 | 0200 0048 | c787 8802 
+  0x0000028fc66bcda4: 0000 0100 | 0000 e921 | 0000 00e9 | 1c00 0000 
+
+  0x0000028fc66bcdb4: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bcdb4: 48bf 78fa | eae7 8f02 | 0000 4883 | af60 0200 | 0001 e947 | 0500 00e9 | 0000 0000 | 488b f048 
+  0x0000028fc66bcdd4: 3b06 488b 
+
+  0x0000028fc66bcdd8: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bcdd8: d648 bf78 | faea e78f | 0200 008b | 5208 49ba | 0000 0000 | 0800 0000 | 4903 d248 | 3b97 a802 
+  0x0000028fc66bcdf8: 0000 750d | 4883 87b0 | 0200 0001 | e960 0000 | 0048 3b97 | b802 0000 | 750d 4883 | 87c0 0200 
+  0x0000028fc66bce18: 0001 e94a | 0000 0048 | 83bf a802 | 0000 0075 | 1748 8997 | a802 0000 | 48c7 87b0 | 0200 0001 
+  0x0000028fc66bce38: 0000 00e9 | 2900 0000 | 4883 bfb8 | 0200 0000 | 7517 4889 | 97b8 0200 | 0048 c787 | c002 0000 
+  0x0000028fc66bce58: 0100 0000 | e908 0000 | 0048 8387 | 9802 0000 | 0148 8bd6 | 4889 7424 | 580f 1f40 | 0048 b800 
+  0x0000028fc66bce78: b07d f58f 
+
+  0x0000028fc66bce7c: ;   {virtual_call}
+  0x0000028fc66bce7c: 0200 00e8 
+
+  0x0000028fc66bce80: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop [88]=Oop }
+                      ;*invokeinterface getAsBoolean {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@54 (line 119)
+  0x0000028fc66bce80: 0cea e906 
+
+  0x0000028fc66bce84: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bce84: 49b8 78fa | eae7 8f02 | 0000 41ff | 80d0 0200 | 00e9 6700 | 0000 498b | 8728 0400 | 004d 33d2 
+  0x0000028fc66bcea4: 4d89 9728 | 0400 004d | 33d2 4d89 | 9730 0400 
+
+  0x0000028fc66bceb4: ;   {oop(a 'ch/qos/logback/classic/Logger'{0x00000006040a68e0})}
+  0x0000028fc66bceb4: 0048 bae0 | 680a 0406 | 0000 004c 
+
+  0x0000028fc66bcec0: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bcec0: 8bc2 49b9 | 78fa eae7 | 8f02 0000 
+
+  0x0000028fc66bcecc: ;   {metadata('ch/qos/logback/classic/Logger')}
+  0x0000028fc66bcecc: 49ba d073 | 0001 0800 | 0000 4d89 | 91f8 0200 | 0049 8381 | 0003 0000 
+
+  0x0000028fc66bcee4: ;   {oop("Exception in invoke"{0x0000000604f48608})}
+  0x0000028fc66bcee4: 0149 b808 | 86f4 0406 | 0000 004c | 8bc8 4889 
+
+  0x0000028fc66bcef4: ;   {optimized virtual_call}
+  0x0000028fc66bcef4: 4424 60e8 
+
+  0x0000028fc66bcef8: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop [88]=Oop [96]=Oop }
+                      ;*invokeinterface error {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@78 (line 127)
+  0x0000028fc66bcef8: 0472 dc06 | b801 0000 | 0083 f800 
+
+  0x0000028fc66bcf04: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bcf04: 49b8 78fa | eae7 8f02 | 0000 49b9 | 2003 0000 | 0000 0000 | 0f84 0a00 | 0000 49b9 | 3003 0000 
+  0x0000028fc66bcf24: 0000 0000 | 4b8b 1408 | 488d 5201 | 4b89 1408 | 0f84 0701 | 0000 488b | 7424 404c 
+
+  0x0000028fc66bcf40: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bcf40: 8bc6 49b9 | 78fa eae7 | 8f02 0000 
+
+  0x0000028fc66bcf4c: ;   {metadata('java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bcf4c: 49ba 4826 | 2f01 0800 | 0000 4d89 | 9150 0300 | 0049 8381 | 5803 0000 
+
+  0x0000028fc66bcf64: ;   {metadata(method data for {method} {0x0000028fe7da2a38} 'remove' '()V' in 'java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bcf64: 0149 b8f8 | edde e78f | 0200 0045 | 8b88 cc00 | 0000 4183 | c102 4589 | 88cc 0000 | 0041 81e1 
+  0x0000028fc66bcf84: feff 1f00 | 4183 f900 | 0f84 8e03 | 0000 8b5e | 1448 c1e3 | 0348 83fb 
+
+  0x0000028fc66bcf9c: ;   {metadata(method data for {method} {0x0000028fe7da2a38} 'remove' '()V' in 'java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bcf9c: 0049 b8f8 | edde e78f | 0200 0049 | b920 0100 | 0000 0000 | 000f 840a | 0000 0049 | b910 0100 
+  0x0000028fc66bcfbc: 0000 0000 | 004b 8b14 | 0848 8d52 | 014b 8914 | 080f 8416 
+
+  0x0000028fc66bcfd0: ;   {oop(NULL)}
+  0x0000028fc66bcfd0: 0100 0049 | b800 0000 | 0000 0000 | 0045 0fbe | 4f40 4183 | f900 0f85 | 5503 0000 | 4d8b d049 
+  0x0000028fc66bcff0: c1ea 0344 | 8953 0cf0 | 8344 24c0 | 004c 8bcb | 4d33 c849 | c1e9 1649 | 83f9 000f | 8555 0300 
+  0x0000028fc66bd010: 0045 0fbe | 4740 4183 | f800 0f85 | 5e03 0000 | c746 1400 
+
+  0x0000028fc66bd024: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bd024: 0000 0049 | b878 faea | e78f 0200 | 0041 ff80 | 7803 0000 | 8944 2468 | e94b 0000 | 0089 4424 
+  0x0000028fc66bd044: ;   {oop(a 'ch/qos/logback/classic/Logger'{0x00000006040a68e0})}
+  0x0000028fc66bd044: 6848 bae0 | 680a 0406 | 0000 004c 
+
+  0x0000028fc66bd050: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bd050: 8bc2 49b9 | 78fa eae7 | 8f02 0000 
+
+  0x0000028fc66bd05c: ;   {metadata('ch/qos/logback/classic/Logger')}
+  0x0000028fc66bd05c: 49ba d073 | 0001 0800 | 0000 4d89 | 91a0 0300 | 0049 8381 | a803 0000 
+
+  0x0000028fc66bd074: ;   {oop("Deferring task {}"{0x0000000604f485c8})}
+  0x0000028fc66bd074: 0149 b8c8 | 85f4 0406 | 0000 004c | 8b4c 2458 
+
+  0x0000028fc66bd084: ;   {optimized virtual_call}
+  0x0000028fc66bd084: 6666 90e8 
+
+  0x0000028fc66bd088: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop [88]=Oop }
+                      ;*invokeinterface trace {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@103 (line 135)
+  0x0000028fc66bd088: 34b8 3300 
+
+  0x0000028fc66bd08c: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bd08c: 48ba 78fa | eae7 8f02 | 0000 8bb2 | d000 0000 | 83c6 0289 | b2d0 0000 | 0081 e6fe | 3f00 0083 
+  0x0000028fc66bd0ac: fe00 0f84 | ea02 0000 | 4d8b 9780 
+
+  0x0000028fc66bd0b8: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop [88]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) net.runelite.client.callback.ClientThread::invokeList@108 (line 137)
+                      ;   {poll}
+  0x0000028fc66bd0b8: 0300 0041 
+
+  0x0000028fc66bd0bc: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bd0bc: 8502 48ba | 78fa eae7 | 8f02 0000 | ff82 c803 | 0000 e9d5 | faff ff48 | 81c4 9000 
+
+  0x0000028fc66bd0d8: ;   {poll_return}
+  0x0000028fc66bd0d8: 0000 5d49 | 3ba7 7803 | 0000 0f87 | d702 0000 | c348 895c | 2478 8944 | 2468 660f | 1f44 0000 
+  0x0000028fc66bd0f8: ;   {no_reloc}
+  0x0000028fc66bd0f8: e9e7 0200 | 0000 0000 | 0000 498b | 87f8 0000 | 0048 8d78 | 2849 3bbf | 0801 0000 | 0f87 d402 
+  0x0000028fc66bd118: 0000 4989 | bff8 0000 | 0048 c700 | 0100 0000 | 488b ca49 | ba00 0000 | 0008 0000 | 0049 2bca 
+  0x0000028fc66bd138: 8948 0848 | 33c9 8948 | 0c48 33c9 | 4889 4810 | 4889 4818 | 4889 4820 
+
+  0x0000028fc66bd150: ;   {metadata(method data for {method} {0x0000028fe7da2a38} 'remove' '()V' in 'java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bd150: 488b d048 | bef8 edde | e78f 0200 | 0048 8386 | 3001 0000 | 0148 8bd0 | 4889 4424 
+
+  0x0000028fc66bd16c: ;   {optimized virtual_call}
+  0x0000028fc66bd16c: 7066 90e8 
+
+  0x0000028fc66bd170: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop [88]=Oop [112]=Oop [120]=Oop }
+                      ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.concurrent.ConcurrentLinkedQueue$Itr::remove@13 (line 799)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@89 (line 131)
+  0x0000028fc66bd170: 8c6f dc06 | 488b 4424 
+
+  0x0000028fc66bd178: ; ImmutableOopMap {rax=Oop [64]=Oop [72]=Oop [80]=Oop [88]=Oop [120]=Oop }
+                      ;*athrow {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.concurrent.ConcurrentLinkedQueue$Itr::remove@16 (line 799)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@89 (line 131)
+                      ;   {section_word}
+  0x0000028fc66bd178: 7048 ba79 | d16b c68f 
+
+  0x0000028fc66bd180: ;   {runtime_call handle_exception_nofpu Runtime1 stub}
+  0x0000028fc66bd180: 0200 00e8 | 7878 e906 | 904c 8944 | 2448 4889 | 5424 500f | 1f44 0000 
+
+  0x0000028fc66bd198: ;   {no_reloc}
+  0x0000028fc66bd198: e96d 0200 | 0000 0000 | 0000 80ba | 2301 0000 | 050f 856a | 0200 0049 | 8b87 f800 | 0000 488d 
+  0x0000028fc66bd1b8: 7828 493b | bf08 0100 | 000f 8752 | 0200 0049 | 89bf f800 | 0000 48c7 | 0001 0000 | 0048 8bca 
+  0x0000028fc66bd1d8: 49ba 0000 | 0000 0800 | 0000 492b | ca89 4808 | 4833 c989 | 480c 4833 | c948 8948 | 1048 8948 
+  0x0000028fc66bd1f8: 1848 8948 | 2048 8bd0 
+
+  0x0000028fc66bd200: ;   {metadata(method data for {method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bd200: 48be 78fa | eae7 8f02 | 0000 4883 | 8688 0100 | 0001 488b | d048 8984 | 2480 0000 
+
+  0x0000028fc66bd21c: ;   {optimized virtual_call}
+  0x0000028fc66bd21c: 0066 90e8 
+
+  0x0000028fc66bd220: ; ImmutableOopMap {[72]=Oop [80]=Oop [128]=Oop }
+                      ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@22 (line 111)
+  0x0000028fc66bd220: dc6e dc06 | 488b 8424 
+
+  0x0000028fc66bd228: ; ImmutableOopMap {rax=Oop [72]=Oop [80]=Oop }
+                      ;*athrow {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) net.runelite.client.callback.ClientThread::invokeList@25 (line 111)
+  0x0000028fc66bd228: 8000 0000 
+
+  0x0000028fc66bd22c: ;   {section_word}
+  0x0000028fc66bd22c: 48ba 2cd2 | 6bc6 8f02 
+
+  0x0000028fc66bd234: ;   {runtime_call handle_exception_nofpu Runtime1 stub}
+  0x0000028fc66bd234: 0000 e8c5 | 77e9 0690 | 488b 7424 | 4049 8b87 | 2804 0000 | 4d33 d24d | 8997 2804 | 0000 4d33 
+  0x0000028fc66bd254: d24d 8997 | 3004 0000 | 488b c848 
+
+  0x0000028fc66bd260: ; ImmutableOopMap {rdi=Oop r8=Oop rbx=Oop rsi=Oop rcx=Oop rax=Oop [64]=Oop }
+                      ;*athrow {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) net.runelite.client.callback.ClientThread::invokeList@68 (line 123)
+                      ;   {section_word}
+  0x0000028fc66bd260: 8bc1 48ba | 62d2 6bc6 | 8f02 0000 
+
+  0x0000028fc66bd26c: ;   {runtime_call handle_exception_nofpu Runtime1 stub}
+  0x0000028fc66bd26c: e88f 77e9 
+
+  0x0000028fc66bd270: ;   {metadata({method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bd270: 0690 49ba | f8f8 ebe6 | 8f02 0000 | 4c89 5424 | 0848 c704 | 24ff ffff 
+
+  0x0000028fc66bd288: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc66bd288: ffe8 72bf 
+
+  0x0000028fc66bd28c: ; ImmutableOopMap {rdx=Oop r8=Oop }
+                      ;*synchronization entry
+                      ; - net.runelite.client.callback.ClientThread::invokeList@-1 (line 111)
+  0x0000028fc66bd28c: e906 e974 
+
+  0x0000028fc66bd290: ;   {runtime_call throw_incompatible_class_change_error Runtime1 stub}
+  0x0000028fc66bd290: f6ff ffe8 
+
+  0x0000028fc66bd294: ; ImmutableOopMap {rdx=Oop r8=Oop rsi=Oop }
+                      ;*invokeinterface isClientThread {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@10 (line 111)
+  0x0000028fc66bd294: 6886 e906 
+
+  0x0000028fc66bd298: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc66bd298: e863 56e9 
+
+  0x0000028fc66bd29c: ; ImmutableOopMap {rdx=Oop r8=Oop rsi=Oop }
+                      ;*invokeinterface isClientThread {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@10 (line 111)
+                      ;   {metadata({method} {0x0000028fe7265ac0} 'isClientThread' '()Z' in 'ba')}
+  0x0000028fc66bd29c: 0649 bab8 | 5a26 e78f | 0200 004c | 8954 2408 | 48c7 0424 | ffff ffff 
+
+  0x0000028fc66bd2b4: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc66bd2b4: e847 bfe9 
+
+  0x0000028fc66bd2b8: ; ImmutableOopMap {rdx=Oop r8=Oop rsi=Oop }
+                      ;*synchronization entry
+                      ; - ba::isClientThread@-1 (line 64764)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@10 (line 111)
+  0x0000028fc66bd2b8: 06e9 52f7 
+
+  0x0000028fc66bd2bc: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc66bd2bc: ffff e83d 
+
+  0x0000028fc66bd2c0: ; ImmutableOopMap {r8=Oop [80]=Oop }
+                      ;*invokevirtual iterator {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@27 (line 112)
+                      ;   {metadata({method} {0x0000028fe6611978} 'iterator' '()Ljava/util/Iterator;' in 'java/util/concurrent/ConcurrentLinkedQueue')}
+  0x0000028fc66bd2c0: 56e9 0649 | ba70 1961 | e68f 0200 | 004c 8954 | 2408 48c7 | 0424 ffff 
+
+  0x0000028fc66bd2d8: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc66bd2d8: ffff e821 
+
+  0x0000028fc66bd2dc: ; ImmutableOopMap {r8=Oop [80]=Oop }
+                      ;*synchronization entry
+                      ; - java.util.concurrent.ConcurrentLinkedQueue::iterator@-1 (line 729)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@27 (line 112)
+  0x0000028fc66bd2dc: bfe9 06e9 | 3cf8 ffff 
+
+  0x0000028fc66bd2e4: ;   {runtime_call fast_new_instance Runtime1 stub}
+  0x0000028fc66bd2e4: 488b d2e8 
+
+  0x0000028fc66bd2e8: ; ImmutableOopMap {r8=Oop [80]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.concurrent.ConcurrentLinkedQueue::iterator@0 (line 729)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@27 (line 112)
+  0x0000028fc66bd2e8: 9463 e906 | e983 f8ff 
+
+  0x0000028fc66bd2f0: ;   {metadata({method} {0x0000028fe7da2818} 'hasNext' '()Z' in 'java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bd2f0: ff49 ba10 | 28da e78f | 0200 004c | 8954 2408 | 48c7 0424 | ffff ffff 
+
+  0x0000028fc66bd308: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc66bd308: e8f3 bee9 
+
+  0x0000028fc66bd30c: ; ImmutableOopMap {rax=Oop [64]=Oop [72]=Oop [80]=Oop }
+                      ;*synchronization entry
+                      ; - java.util.concurrent.ConcurrentLinkedQueue$Itr::hasNext@-1 (line 772)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@32 (line 113)
+  0x0000028fc66bd30c: 06e9 e9f8 | ffff 4889 
+
+  0x0000028fc66bd314: ;   {runtime_call throw_class_cast_exception Runtime1 stub}
+  0x0000028fc66bd314: 0424 e8e5 
+
+  0x0000028fc66bd318: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop }
+                      ;*checkcast {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@46 (line 115)
+                      ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc66bd318: 82e9 06e8 
+
+  0x0000028fc66bd31c: ; ImmutableOopMap {rsi=Oop [64]=Oop [72]=Oop [80]=Oop }
+                      ;*invokeinterface getAsBoolean {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@54 (line 119)
+  0x0000028fc66bd31c: e055 e906 
+
+  0x0000028fc66bd320: ;   {metadata({method} {0x0000028fe7da2a38} 'remove' '()V' in 'java/util/concurrent/ConcurrentLinkedQueue$Itr')}
+  0x0000028fc66bd320: 49ba 302a | dae7 8f02 | 0000 4c89 | 5424 0848 | c704 24ff 
+
+  0x0000028fc66bd334: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc66bd334: ffff ffe8 
+
+  0x0000028fc66bd338: ; ImmutableOopMap {rsi=Oop [64]=Oop [72]=Oop [80]=Oop [88]=Oop }
+                      ;*synchronization entry
+                      ; - java.util.concurrent.ConcurrentLinkedQueue$Itr::remove@-1 (line 798)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@89 (line 131)
+  0x0000028fc66bd338: c4be e906 | e951 fcff | ff44 8b4b | 0c49 c1e1 | 0349 83f9 | 000f 8499 | fcff ff4c 
+
+  0x0000028fc66bd354: ;   {runtime_call g1_pre_barrier_slow}
+  0x0000028fc66bd354: 890c 24e8 | a4c4 e906 | e98b fcff 
+
+  0x0000028fc66bd360: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc66bd360: ffe8 9a55 
+
+  0x0000028fc66bd364: ; ImmutableOopMap {rsi=Oop rbx=Oop r8=Oop [64]=Oop [72]=Oop [80]=Oop [88]=Oop }
+                      ;*putfield item {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.concurrent.ConcurrentLinkedQueue$Itr::remove@19 (line 801)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@89 (line 131)
+  0x0000028fc66bd364: e906 4983 | f800 0f84 | a1fc ffff | 4889 1c24 
+
+  0x0000028fc66bd374: ;   {runtime_call g1_post_barrier_slow}
+  0x0000028fc66bd374: e887 c7e9 | 06e9 93fc | ffff 448b | 4614 49c1 | e003 4983 | f800 0f84 | 90fc ffff | 4c89 0424 
+  0x0000028fc66bd394: ;   {runtime_call g1_pre_barrier_slow}
+  0x0000028fc66bd394: e867 c4e9 | 06e9 82fc 
+
+  0x0000028fc66bd39c: ;   {metadata({method} {0x0000028fe6ebf900} 'invokeList' '(Ljava/util/concurrent/ConcurrentLinkedQueue;)V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc66bd39c: ffff 49ba | f8f8 ebe6 | 8f02 0000 | 4c89 5424 | 0848 c704 | 246c 0000 
+
+  0x0000028fc66bd3b4: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc66bd3b4: 00e8 46be 
+
+  0x0000028fc66bd3b8: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop [88]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) net.runelite.client.callback.ClientThread::invokeList@108 (line 137)
+  0x0000028fc66bd3b8: e906 e9f5 
+
+  0x0000028fc66bd3bc: ;   {internal_word}
+  0x0000028fc66bd3bc: fcff ff49 | badb d06b | c68f 0200 | 004d 8997 | 9003 0000 
+
+  0x0000028fc66bd3d0: ;   {runtime_call SafepointBlob}
+  0x0000028fc66bd3d0: e9ab d9dc 
+
+  0x0000028fc66bd3d4: ;   {metadata(NULL)}
+  0x0000028fc66bd3d4: 0648 ba00 | 0000 0000 | 0000 00b8 | 000f 050a 
+
+  0x0000028fc66bd3e4: ;   {runtime_call load_klass_patching Runtime1 stub}
+  0x0000028fc66bd3e4: e897 a8e9 
+
+  0x0000028fc66bd3e8: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop [88]=Oop [120]=Oop }
+                      ;*new {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.concurrent.ConcurrentLinkedQueue$Itr::remove@9 (line 799)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@89 (line 131)
+  0x0000028fc66bd3e8: 06e9 0afd | ffff 488b 
+
+  0x0000028fc66bd3f0: ;   {runtime_call fast_new_instance Runtime1 stub}
+  0x0000028fc66bd3f0: d2e8 8a62 
+
+  0x0000028fc66bd3f4: ; ImmutableOopMap {[64]=Oop [72]=Oop [80]=Oop [88]=Oop [120]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.concurrent.ConcurrentLinkedQueue$Itr::remove@9 (line 799)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@89 (line 131)
+  0x0000028fc66bd3f4: e906 e955 
+
+  0x0000028fc66bd3f8: ;   {metadata(NULL)}
+  0x0000028fc66bd3f8: fdff ff48 | ba00 0000 | 0000 0000 | 00b8 000f 
+
+  0x0000028fc66bd408: ;   {runtime_call load_klass_patching Runtime1 stub}
+  0x0000028fc66bd408: 050a e871 
+
+  0x0000028fc66bd40c: ; ImmutableOopMap {[72]=Oop [80]=Oop }
+                      ;*new {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) net.runelite.client.callback.ClientThread::invokeList@18 (line 111)
+  0x0000028fc66bd40c: a8e9 06e9 | 84fd ffff 
+
+  0x0000028fc66bd414: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc66bd414: e8e7 54e9 
+
+  0x0000028fc66bd418: ; ImmutableOopMap {[72]=Oop [80]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@18 (line 111)
+  0x0000028fc66bd418: 0648 8bd2 
+
+  0x0000028fc66bd41c: ;   {runtime_call fast_new_instance_init_check Runtime1 stub}
+  0x0000028fc66bd41c: e8df 69e9 
+
+  0x0000028fc66bd420: ; ImmutableOopMap {[72]=Oop [80]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invokeList@18 (line 111)
+  0x0000028fc66bd420: 06e9 d7fd 
+
+  0x0000028fc66bd424: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc66bd424: ffff e8d5 
+
+  0x0000028fc66bd428: ; ImmutableOopMap {rsi=Oop rbx=Oop r8=Oop [64]=Oop [72]=Oop [80]=Oop [88]=Oop }
+                      ;*putfield item {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.util.concurrent.ConcurrentLinkedQueue$Itr::remove@19 (line 801)
+                      ; - net.runelite.client.callback.ClientThread::invokeList@89 (line 131)
+  0x0000028fc66bd428: 54e9 0648 | 8b7c 2458 | 4c8b 4424 | 4848 8b5c | 2450 e9fd | fdff ff48 | 8bfe 4c8b | 4424 4848 
+  0x0000028fc66bd448: 8b5c 2450 | e9eb fdff | ff48 8974 | 2458 e93f | faff ff49 | 8b87 2804 | 0000 49c7 | 8728 0400 
+  0x0000028fc66bd468: 0000 0000 | 0049 c787 | 3004 0000 | 0000 0000 | 4881 c490 | 0000 005d 
+
+  0x0000028fc66bd480: ;   {runtime_call unwind_exception Runtime1 stub}
+  0x0000028fc66bd480: e97b 37e9 | 06f4 f4f4 
+[Stub Code]
+  0x0000028fc66bd488: ;   {no_reloc}
+  0x0000028fc66bd488: 0f1f 4400 
+
+  0x0000028fc66bd48c: ;   {static_stub}
+  0x0000028fc66bd48c: 0048 bb60 | 29da e78f 
+
+  0x0000028fc66bd494: ;   {runtime_call I2C/C2I adapters}
+  0x0000028fc66bd494: 0200 00e9 | 37b6 dc06 
+
+  0x0000028fc66bd49c: ;   {static_stub}
+  0x0000028fc66bd49c: 9048 bb00 | 0000 0000 
+
+  0x0000028fc66bd4a4: ;   {runtime_call}
+  0x0000028fc66bd4a4: 0000 00e9 | fbff ffff 
+
+  0x0000028fc66bd4ac: ;   {static_stub}
+  0x0000028fc66bd4ac: 9048 bb00 | 0000 0000 
+
+  0x0000028fc66bd4b4: ;   {runtime_call}
+  0x0000028fc66bd4b4: 0000 00e9 | fbff ffff 
+[Exception Handler]
+  0x0000028fc66bd4bc: ;   {runtime_call handle_exception_from_callee Runtime1 stub}
+  0x0000028fc66bd4bc: e83f 7be9 
+
+  0x0000028fc66bd4c0: ;   {external_word}
+  0x0000028fc66bd4c0: 0648 b9b0 | 23fd 83f8 | 7f00 0048 
+
+  0x0000028fc66bd4cc: ;   {runtime_call}
+  0x0000028fc66bd4cc: 83e4 f048 | b820 16c9 | 83f8 7f00 | 00ff d0f4 
+[Deopt Handler Code]
+  0x0000028fc66bd4dc: ;   {section_word}
+  0x0000028fc66bd4dc: 49ba dcd4 | 6bc6 8f02 | 0000 4152 
+
+  0x0000028fc66bd4e8: ;   {runtime_call DeoptimizationBlob}
+  0x0000028fc66bd4e8: e933 cbdc 
+
+  0x0000028fc66bd4ec: ;   {static_stub}
+  0x0000028fc66bd4ec: 0648 bb00 | 0000 0000 
+
+  0x0000028fc66bd4f4: ;   {runtime_call}
+  0x0000028fc66bd4f4: 0000 00e9 | fbff ffff 
+
+  0x0000028fc66bd4fc: ;   {static_stub}
+  0x0000028fc66bd4fc: 48bb 0000 | 0000 0000 
+
+  0x0000028fc66bd504: ;   {runtime_call}
+  0x0000028fc66bd504: 0000 e9fb 
+
+  0x0000028fc66bd508: ;   {static_stub}
+  0x0000028fc66bd508: ffff ff48 | bb00 0000 | 0000 0000 
+
+  0x0000028fc66bd514: ;   {runtime_call}
+  0x0000028fc66bd514: 00e9 fbff 
+
+  0x0000028fc66bd518: ;   {static_stub}
+  0x0000028fc66bd518: ffff 48bb | 98b0 02e6 | 8f02 0000 
+
+  0x0000028fc66bd524: ;   {runtime_call I2C/C2I adapters}
+  0x0000028fc66bd524: e9b2 2edc | 06f4 f4f4 | f4f4 f4f4 
+[/MachCode]
+
+
+Compiled method (c1)    7316 5214   !   3       net.runelite.client.callback.Hooks::tick (122 bytes)
+ total in heap  [0x0000028fc6a06790,0x0000028fc6a07f20] = 6032
+ relocation     [0x0000028fc6a068d8,0x0000028fc6a06a50] = 376
+ main code      [0x0000028fc6a06a60,0x0000028fc6a077f8] = 3480
+ stub code      [0x0000028fc6a077f8,0x0000028fc6a078d0] = 216
+ oops           [0x0000028fc6a078d0,0x0000028fc6a078f0] = 32
+ metadata       [0x0000028fc6a078f0,0x0000028fc6a07998] = 168
+ scopes data    [0x0000028fc6a07998,0x0000028fc6a07af8] = 352
+ scopes pcs     [0x0000028fc6a07af8,0x0000028fc6a07d48] = 592
+ dependencies   [0x0000028fc6a07d48,0x0000028fc6a07d78] = 48
+ handler table  [0x0000028fc6a07d78,0x0000028fc6a07ec8] = 336
+ nul chk table  [0x0000028fc6a07ec8,0x0000028fc6a07f20] = 88
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Entry Point]
+  # {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks'
+  #           [sp+0xc0]  (sp of caller)
+  0x0000028fc6a06a60: 448b 5208 | 49bb 0000 | 0000 0800 | 0000 4d03 | d34c 3bd0 
+
+  0x0000028fc6a06a74: ;   {runtime_call ic_miss_stub}
+  0x0000028fc6a06a74: 0f85 86d3 | a706 660f | 1f44 0000 
+[Verified Entry Point]
+  0x0000028fc6a06a80: 8984 2400 | 80ff ff55 | 4881 ecb0 | 0000 0090 | 4181 7f20 | 0700 0000 
+
+  0x0000028fc6a06a98: ;   {runtime_call StubRoutines (2)}
+  0x0000028fc6a06a98: 7405 e841 | d6a8 0648 | 8954 2460 
+
+  0x0000028fc6a06aa4: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06aa4: 48be 18a4 | 6de8 8f02 | 0000 8bbe | cc00 0000 | 83c7 0289 | becc 0000 | 0081 e7fe | 0700 0083 
+  0x0000028fc6a06ac4: ff00 0f84 | 0e0b 0000 | 0fbe 7221 
+
+  0x0000028fc6a06ad0: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06ad0: 83fe 0048 | be18 a46d | e88f 0200 | 0048 bf10 | 0100 0000 | 0000 000f | 840a 0000 | 0048 bf20 
+  0x0000028fc6a06af0: 0100 0000 | 0000 0048 | 8b1c 3e48 | 8d5b 0148 | 891c 3e0f | 8436 0200 | 00c6 4221 | 008b 7230 
+  0x0000028fc6a06b10: 48c1 e603 
+
+  0x0000028fc6a06b14: ; implicit exception: dispatches to 0x0000028fc6a075fb
+  0x0000028fc6a06b14: 483b 0648 
+
+  0x0000028fc6a06b18: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06b18: 8bfe 48bb | 18a4 6de8 | 8f02 0000 
+
+  0x0000028fc6a06b24: ;   {metadata('net/runelite/client/util/DeferredEventBus')}
+  0x0000028fc6a06b24: 49ba 40d6 | 2201 0800 | 0000 4c89 | 9340 0100 | 0048 8383 | 4801 0000 | 0148 8bd6 | 0f1f 8000 
+  0x0000028fc6a06b44: ;   {optimized virtual_call}
+  0x0000028fc6a06b44: 0000 00e8 
+
+  0x0000028fc6a06b48: ; ImmutableOopMap {[96]=Oop }
+                      ;*invokevirtual replay {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@16 (line 207)
+  0x0000028fc6a06b48: b4d5 a706 | 488b 5424 | 608b 722c | 48c1 e603 
+
+  0x0000028fc6a06b58: ; implicit exception: dispatches to 0x0000028fc6a07600
+  0x0000028fc6a06b58: 483b 064c 
+
+  0x0000028fc6a06b5c: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06b5c: 8bc6 48bf | 18a4 6de8 | 8f02 0000 | 458b 4008 | 49ba 0000 | 0000 0800 | 0000 4d03 | c24c 3b87 
+  0x0000028fc6a06b7c: 7801 0000 | 750d 4883 | 8780 0100 | 0001 e960 | 0000 004c | 3b87 8801 | 0000 750d | 4883 8790 
+  0x0000028fc6a06b9c: 0100 0001 | e94a 0000 | 0048 83bf | 7801 0000 | 0075 174c | 8987 7801 | 0000 48c7 | 8780 0100 
+  0x0000028fc6a06bbc: 0001 0000 | 00e9 2900 | 0000 4883 | bf88 0100 | 0000 7517 | 4c89 8788 | 0100 0048 | c787 9001 
+  0x0000028fc6a06bdc: 0000 0100 | 0000 e908 | 0000 0048 | 8387 6801 
+
+  0x0000028fc6a06bec: ;   {oop(a 'net/runelite/api/events/GameTick'{0x0000000604f4a1f8})}
+  0x0000028fc6a06bec: 0000 0149 | b8f8 a1f4 | 0406 0000 | 0048 8bd6 | 9048 b8ff | ffff ffff 
+
+  0x0000028fc6a06c04: ;   {virtual_call}
+  0x0000028fc6a06c04: ffff ffe8 
+
+  0x0000028fc6a06c08: ; ImmutableOopMap {[96]=Oop }
+                      ;*invokevirtual post {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@26 (line 209)
+  0x0000028fc6a06c08: f4d7 a706 | 488b 5424 | 6044 8b42 | 2449 c1e0 | 0349 83f8 | 000f 8429 
+
+  0x0000028fc6a06c20: ;   {metadata('client')}
+  0x0000028fc6a06c20: 0000 0048 | b800 8030 | 0108 0000 | 0041 8b78 | 0849 ba00 | 0000 0008 | 0000 0049 | 03fa 483b 
+  0x0000028fc6a06c40: c70f 85be | 0900 00e9 | 0000 0000 | 498b f049 | 3b00 498b 
+
+  0x0000028fc6a06c54: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06c54: f048 bf18 | a46d e88f 
+
+  0x0000028fc6a06c5c: ;   {metadata('client')}
+  0x0000028fc6a06c5c: 0200 0049 | ba00 8030 | 0108 0000 | 004c 8997 | b001 0000 | 4883 87b8 | 0100 0001 
+
+  0x0000028fc6a06c78: ;   {metadata(method data for {method} {0x0000028fe7392858} 'getTickCount' '()I' in 'client')}
+  0x0000028fc6a06c78: 48be 00c0 | 6de8 8f02 | 0000 8bbe | cc00 0000 | 83c7 0289 | becc 0000 | 0081 e7fe | ff1f 0083 
+  0x0000028fc6a06c98: ff00 0f84 | 6f09 0000 
+
+  0x0000028fc6a06ca0: ;   {oop(a 'java/lang/Class'{0x0000000603518b58} = 'client')}
+  0x0000028fc6a06ca0: 48be 588b | 5103 0600 | 0000 8bbe | 2805 0000 | 4983 f800 | 0f84 2900 
+
+  0x0000028fc6a06cb8: ;   {metadata('client')}
+  0x0000028fc6a06cb8: 0000 49b9 | 0080 3001 | 0800 0000 | 418b 4008 | 49ba 0000 | 0000 0800 | 0000 4903 | c24c 3bc8 
+  0x0000028fc6a06cd8: 0f85 5209 | 0000 e900 | 0000 0049 | 8bd8 498b 
+
+  0x0000028fc6a06ce8: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06ce8: d848 b818 | a46d e88f 
+
+  0x0000028fc6a06cf0: ;   {metadata('client')}
+  0x0000028fc6a06cf0: 0200 0049 | ba00 8030 | 0108 0000 | 004c 8990 | e801 0000 | 4883 80f0 | 0100 0001 | 488b dfff 
+  0x0000028fc6a06d10: ;   {metadata(method data for {method} {0x0000028fe73967b0} 'setTickCount' '(I)V' in 'client')}
+  0x0000028fc6a06d10: c348 b830 | c16d e88f | 0200 008b | 88cc 0000 | 0083 c102 | 8988 cc00 | 0000 81e1 | feff 1f00 
+  0x0000028fc6a06d30: 83f9 000f | 84fc 0800 | 0089 9e28 | 0500 008b | 7248 48c1 | e603 483b | 064c 8bc6 
+
+  0x0000028fc6a06d4c: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06d4c: 48bf 18a4 | 6de8 8f02 
+
+  0x0000028fc6a06d54: ;   {metadata('net/runelite/client/callback/ClientThread')}
+  0x0000028fc6a06d54: 0000 49ba | b829 2801 | 0800 0000 | 4c89 9720 | 0200 0048 | 8387 2802 
+
+  0x0000028fc6a06d6c: ;   {metadata(method data for {method} {0x0000028fe6ebf6c8} 'invoke' '()V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc6a06d6c: 0000 0149 | b818 a86d | e88f 0200 | 0041 8bb8 | cc00 0000 | 83c7 0241 | 89b8 cc00 | 0000 81e7 
+  0x0000028fc6a06d8c: feff 1f00 | 83ff 000f | 84c2 0800 | 0044 8b46 | 0c49 c1e0 | 0348 8bfe 
+
+  0x0000028fc6a06da4: ;   {metadata(method data for {method} {0x0000028fe6ebf6c8} 'invoke' '()V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc6a06da4: 48bb 18a8 | 6de8 8f02 | 0000 4883 | 8310 0100 | 0001 488b | d648 8974 
+
+  0x0000028fc6a06dbc: ;   {optimized virtual_call}
+  0x0000028fc6a06dbc: 2468 90e8 
+
+  0x0000028fc6a06dc0: ; ImmutableOopMap {[96]=Oop [104]=Oop }
+                      ;*invokevirtual invokeList {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.ClientThread::invoke@5 (line 101)
+                      ; - net.runelite.client.callback.Hooks::tick@55 (line 215)
+  0x0000028fc6a06dc0: fc5a cbff 
+
+  0x0000028fc6a06dc4: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06dc4: 48be 18a4 | 6de8 8f02 | 0000 4883 | 8648 0200 
+
+  0x0000028fc6a06dd4: ;   {runtime_call}
+  0x0000028fc6a06dd4: 0001 48b8 | b06d d383 | f87f 0000 | ffd0 4889 | 4424 7048 | 8b54 2460 | 488b 7210 | 488b f848 
+  0x0000028fc6a06df4: 2bfe 48be | 0046 c323 | 0000 0000 
+
+  0x0000028fc6a06e00: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06e00: 483b fe48 | be18 a46d | e88f 0200 | 0048 bf68 | 0200 0000 | 0000 000f | 8c0a 0000 | 0048 bf58 
+  0x0000028fc6a06e20: 0200 0000 | 0000 0048 | 8b1c 3e48 | 8d5b 0148 | 891c 3e0f | 8cb1 0600 | 0048 8942 | 108b 7234 
+  0x0000028fc6a06e40: 48c1 e603 
+
+  0x0000028fc6a06e44: ; implicit exception: dispatches to 0x0000028fc6a0767c
+  0x0000028fc6a06e44: 483b 0648 
+
+  0x0000028fc6a06e48: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06e48: 8bfe 48bb | 18a4 6de8 | 8f02 0000 
+
+  0x0000028fc6a06e54: ;   {metadata('net/runelite/client/task/Scheduler')}
+  0x0000028fc6a06e54: 49ba 088f | 2201 0800 | 0000 4c89 | 9388 0200 | 0048 8383 | 9002 0000 | 0148 8bd6 | 0f1f 8000 
+  0x0000028fc6a06e74: ;   {optimized virtual_call}
+  0x0000028fc6a06e74: 0000 00e8 
+
+  0x0000028fc6a06e78: ; ImmutableOopMap {[96]=Oop }
+                      ;*invokevirtual tick {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@85 (line 229)
+  0x0000028fc6a06e78: a109 0000 | 488b 5424 | 608b 7238 | 48c1 e603 
+
+  0x0000028fc6a06e88: ; implicit exception: dispatches to 0x0000028fc6a07681
+  0x0000028fc6a06e88: 483b 0648 
+
+  0x0000028fc6a06e8c: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a06e8c: 8bc6 48bf | 18a4 6de8 | 8f02 0000 
+
+  0x0000028fc6a06e98: ;   {metadata('net/runelite/client/ui/overlay/infobox/InfoBoxManager')}
+  0x0000028fc6a06e98: 49ba 7029 | 2901 0800 | 0000 4c89 | 97c0 0200 | 0048 8387 | c802 0000 | 0148 8dbc | 2498 0000 
+  0x0000028fc6a06eb8: 0048 8977 | 0848 8b06 | 4883 c801 | 4889 07f0 | 480f b13e | 0f84 1200 | 0000 482b | c448 2507 
+  0x0000028fc6a06ed8: f0ff ff48 | 8907 0f85 | a207 0000 | 49ff 8778 
+
+  0x0000028fc6a06ee8: ;   {metadata(method data for {method} {0x0000028fe702d988} 'cull' '()V' in 'net/runelite/client/ui/overlay/infobox/InfoBoxManager')}
+  0x0000028fc6a06ee8: 0400 0048 | bf78 b16d | e88f 0200 | 008b 9fcc | 0000 0083 | c302 899f | cc00 0000 | 81e3 feff 
+  0x0000028fc6a06f08: 1f00 83fb | 000f 8486 | 0700 008b | 7e0c 48c1 | e703 483b | 0748 8bdf 
+
+  0x0000028fc6a06f20: ;   {metadata(method data for {method} {0x0000028fe702d988} 'cull' '()V' in 'net/runelite/client/ui/overlay/infobox/InfoBoxManager')}
+  0x0000028fc6a06f20: 48b8 78b1 | 6de8 8f02 | 0000 8b5b | 0849 ba00 | 0000 0008 | 0000 0049 | 03da 483b | 9820 0100 
+  0x0000028fc6a06f40: 0075 0d48 | 8380 2801 | 0000 01e9 | 6000 0000 | 483b 9830 | 0100 0075 | 0d48 8380 | 3801 0000 
+  0x0000028fc6a06f60: 01e9 4a00 | 0000 4883 | b820 0100 | 0000 7517 | 4889 9820 | 0100 0048 | c780 2801 | 0000 0100 
+  0x0000028fc6a06f80: 0000 e929 | 0000 0048 | 83b8 3001 | 0000 0075 | 1748 8998 | 3001 0000 | 48c7 8038 | 0100 0001 
+  0x0000028fc6a06fa0: 0000 00e9 | 0800 0000 | 4883 8010 | 0100 0001 | 488b d748 | 8974 2478 | 0f1f 4400 | 0048 b8f0 
+  0x0000028fc6a06fc0: 4b06 0008 
+
+  0x0000028fc6a06fc4: ;   {virtual_call}
+  0x0000028fc6a06fc4: 0000 00e8 
+
+  0x0000028fc6a06fc8: ; ImmutableOopMap {[96]=Oop [120]=Oop [160]=Oop }
+                      ;*invokeinterface values {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.ui.overlay.infobox.InfoBoxManager::cull@4 (line 223)
+                      ; - net.runelite.client.callback.Hooks::tick@92 (line 232)
+  0x0000028fc6a06fc8: f4c9 bfff 
+
+  0x0000028fc6a06fcc: ;   {metadata(method data for {method} {0x00000008000b28c8} 'linkToTargetMethod' '(Ljava/lang/Object;)Ljava/lang/Object;' in 'java/lang/invoke/Invokers$Holder')}
+  0x0000028fc6a06fcc: 49b8 3867 | c5e5 8f02 | 0000 4d8d | 80e8 0100 
+
+  0x0000028fc6a06fdc: ;   {oop(a 'java/lang/invoke/BoundMethodHandle$Species_L'{0x00000006043541f8})}
+  0x0000028fc6a06fdc: 0048 baf8 | 4135 0406 | 0000 0048 | 8bf2 4885 | f675 0449 
+
+  0x0000028fc6a06ff0: ;   {metadata(method data for {method} {0x0000028fe702d988} 'cull' '()V' in 'net/runelite/client/ui/overlay/infobox/InfoBoxManager')}
+  0x0000028fc6a06ff0: 8308 0149 | b878 b16d | e88f 0200 | 0049 8380 | 4801 0000 
+
+  0x0000028fc6a07004: ;   {metadata(method data for {method} {0x00000008000b28c8} 'linkToTargetMethod' '(Ljava/lang/Object;)Ljava/lang/Object;' in 'java/lang/invoke/Invokers$Holder')}
+  0x0000028fc6a07004: 0149 b838 | 67c5 e58f | 0200 0041 | 8bb0 cc00 | 0000 83c6 | 0241 89b0 | cc00 0000 | 81e6 feff 
+  0x0000028fc6a07024: 1f00 83fe | 000f 8490 
+
+  0x0000028fc6a0702c: ;   {metadata(method data for {method} {0x0000028fe6002240} 'invoke' '(Ljava/lang/Object;)Ljava/lang/Object;' in 'java/lang/invoke/LambdaForm$MH+0x0000000801000400')}
+  0x0000028fc6a0702c: 0600 0049 | b848 2400 | e68f 0200 | 004d 8d80 | a001 0000 | 4885 d275 | 0449 8308 
+
+  0x0000028fc6a07048: ;   {metadata(method data for {method} {0x00000008000b28c8} 'linkToTargetMethod' '(Ljava/lang/Object;)Ljava/lang/Object;' in 'java/lang/invoke/Invokers$Holder')}
+  0x0000028fc6a07048: 0149 b838 | 67c5 e58f | 0200 0049 | 8380 4801 
+
+  0x0000028fc6a07058: ;   {metadata(method data for {method} {0x0000028fe6002240} 'invoke' '(Ljava/lang/Object;)Ljava/lang/Object;' in 'java/lang/invoke/LambdaForm$MH+0x0000000801000400')}
+  0x0000028fc6a07058: 0000 0149 | b848 2400 | e68f 0200 | 0041 8b90 | cc00 0000 | 83c2 0241 | 8990 cc00 | 0000 81e2 
+  0x0000028fc6a07078: feff 1f00 | 83fa 000f | 845b 0600 
+
+  0x0000028fc6a07084: ;   {metadata(method data for {method} {0x00000008000b28c8} 'linkToTargetMethod' '(Ljava/lang/Object;)Ljava/lang/Object;' in 'java/lang/invoke/Invokers$Holder')}
+  0x0000028fc6a07084: 0049 b838 | 67c5 e58f | 0200 004d | 8d80 8001 
+
+  0x0000028fc6a07094: ;   {oop(a 'net/runelite/client/ui/overlay/infobox/InfoBoxManager$$Lambda$271+0x00000008013ffd70'{0x0000000604354220})}
+  0x0000028fc6a07094: 0000 48ba | 2042 3504 | 0600 0000 | 488b f248 | 85f6 7504 | 4983 0801 
+
+  0x0000028fc6a070ac: ;   {metadata(method data for {method} {0x0000028fe702d988} 'cull' '()V' in 'net/runelite/client/ui/overlay/infobox/InfoBoxManager')}
+  0x0000028fc6a070ac: 49b8 78b1 | 6de8 8f02 | 0000 4d8d | 8058 0100 | 0048 8bf2 | 4885 f675 | 0649 8308 
+
+  0x0000028fc6a070c8: ;   {metadata('net/runelite/client/ui/overlay/infobox/InfoBoxManager$$Lambda$271+0x00000008013ffd70')}
+  0x0000028fc6a070c8: 01eb 3d48 | be70 fd3f | 0108 0000 | 0049 3330 | 48f7 c6fc | ffff ff74 | 2740 f6c6 | 0275 2149 
+  0x0000028fc6a070e8: 8338 0074 | 1849 8338 | 0174 1249 | 3330 48f7 | c6fc ffff | ff74 0949 | 8308 02eb | 0349 8930 
+  0x0000028fc6a07108: ; implicit exception: dispatches to 0x0000028fc6a07701
+  0x0000028fc6a07108: 483b 004c 
+
+  0x0000028fc6a0710c: ;   {metadata(method data for {method} {0x0000028fe702d988} 'cull' '()V' in 'net/runelite/client/ui/overlay/infobox/InfoBoxManager')}
+  0x0000028fc6a0710c: 8bc0 48be | 78b1 6de8 | 8f02 0000 | 458b 4008 | 49ba 0000 | 0000 0800 | 0000 4d03 | c24c 3b86 
+  0x0000028fc6a0712c: 7801 0000 | 750d 4883 | 8680 0100 | 0001 e960 | 0000 004c | 3b86 8801 | 0000 750d | 4883 8690 
+  0x0000028fc6a0714c: 0100 0001 | e94a 0000 | 0048 83be | 7801 0000 | 0075 174c | 8986 7801 | 0000 48c7 | 8680 0100 
+  0x0000028fc6a0716c: 0001 0000 | 00e9 2900 | 0000 4883 | be88 0100 | 0000 7517 | 4c89 8688 | 0100 0048 | c786 9001 
+  0x0000028fc6a0718c: 0000 0100 | 0000 e908 | 0000 0048 | 8386 6801 | 0000 014c | 8bc2 488b | d048 b8a0 | 6e13 f58f 
+  0x0000028fc6a071ac: ;   {virtual_call}
+  0x0000028fc6a071ac: 0200 00e8 
+
+  0x0000028fc6a071b0: ; ImmutableOopMap {[96]=Oop [120]=Oop [160]=Oop }
+                      ;*invokeinterface forEach {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.ui.overlay.infobox.InfoBoxManager::cull@14 (line 223)
+                      ; - net.runelite.client.callback.Hooks::tick@92 (line 232)
+  0x0000028fc6a071b0: 7126 a806 | 488d 8424 | 9800 0000 | 488b 1048 | 85d2 0f84 | 0f00 0000 | 488b 7008 | f048 0fb1 
+  0x0000028fc6a071d0: 160f 852f | 0500 0049 | ff8f 7804 | 0000 488b | 5424 608b | 723c 48c1 | e603 4889 | b424 8000 
+  0x0000028fc6a071f0: 0000 483b | 0648 8bfe 
+
+  0x0000028fc6a071f8: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a071f8: 48bb 18a4 | 6de8 8f02 
+
+  0x0000028fc6a07200: ;   {metadata('net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a07200: 0000 49ba | 788a 2201 | 0800 0000 | 4c89 93f8 | 0200 0048 | 8383 0003 
+
+  0x0000028fc6a07218: ;   {metadata(method data for {method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a07218: 0000 0148 | bf58 b36d | e88f 0200 | 008b 9fcc | 0000 0083 | c302 899f | cc00 0000 | 81e3 feff 
+  0x0000028fc6a07238: 1f00 83fb | 000f 84de | 0400 00e9 | 7e00 0000 | 4c8b 8424 | 8000 0000 
+
+  0x0000028fc6a07250: ;   {metadata(method data for {method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a07250: 48ba 58b3 | 6de8 8f02 | 0000 4883 | 82a0 0100 | 0001 4c8b | c648 8b94 | 2480 0000 | 0048 89b4 
+  0x0000028fc6a07270: 2488 0000 
+
+  0x0000028fc6a07274: ;   {optimized virtual_call}
+  0x0000028fc6a07274: 0066 90e8 
+
+  0x0000028fc6a07278: ; ImmutableOopMap {[96]=Oop [128]=Oop [136]=Oop }
+                      ;*invokevirtual add {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.chat.ChatMessageManager::process@19 (line 810)
+                      ; - net.runelite.client.callback.Hooks::tick@99 (line 234)
+  0x0000028fc6a07278: 84ce a706 
+
+  0x0000028fc6a0727c: ;   {metadata(method data for {method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a0727c: 48ba 58b3 | 6de8 8f02 | 0000 8bb2 | d000 0000 | 83c6 0289 | b2d0 0000 | 0081 e6fe | 3f00 0083 
+  0x0000028fc6a0729c: fe00 0f84 | 9e04 0000 | 4d8b 9780 
+
+  0x0000028fc6a072a8: ; ImmutableOopMap {[96]=Oop [128]=Oop [136]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) net.runelite.client.chat.ChatMessageManager::process@22 (line 810)
+                      ; - net.runelite.client.callback.Hooks::tick@99 (line 234)
+                      ;   {poll}
+  0x0000028fc6a072a8: 0300 0041 
+
+  0x0000028fc6a072ac: ;   {metadata(method data for {method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a072ac: 8502 48ba | 58b3 6de8 | 8f02 0000 | ff82 d801 | 0000 488b | b424 8000 | 0000 8b7e | 1c48 c1e7 
+  0x0000028fc6a072cc: 0348 3b07 
+
+  0x0000028fc6a072d0: ;   {metadata(method data for {method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a072d0: 488b df48 | b858 b36d | e88f 0200 | 008b 5b08 | 49ba 0000 | 0000 0800 | 0000 4903 | da48 3b98 
+  0x0000028fc6a072f0: 2001 0000 | 750d 4883 | 8028 0100 | 0001 e960 | 0000 0048 | 3b98 3001 | 0000 750d | 4883 8038 
+  0x0000028fc6a07310: 0100 0001 | e94a 0000 | 0048 83b8 | 2001 0000 | 0075 1748 | 8998 2001 | 0000 48c7 | 8028 0100 
+  0x0000028fc6a07330: 0001 0000 | 00e9 2900 | 0000 4883 | b830 0100 | 0000 7517 | 4889 9830 | 0100 0048 | c780 3801 
+  0x0000028fc6a07350: 0000 0100 | 0000 e908 | 0000 0048 | 8380 1001 | 0000 0148 | 8bd7 0f1f | 8000 0000 | 0048 b890 
+  0x0000028fc6a07370: 8215 0108 
+
+  0x0000028fc6a07374: ;   {virtual_call}
+  0x0000028fc6a07374: 0000 00e8 
+
+  0x0000028fc6a07378: ; ImmutableOopMap {[96]=Oop [128]=Oop }
+                      ;*invokeinterface poll {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.chat.ChatMessageManager::process@4 (line 808)
+                      ; - net.runelite.client.callback.Hooks::tick@99 (line 234)
+  0x0000028fc6a07378: 6407 b2ff | 4883 f800 
+
+  0x0000028fc6a07380: ;   {metadata(method data for {method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a07380: 7516 48ba | 58b3 6de8 | 8f02 0000 | 808a 4101 | 0000 01e9 | cd00 0000 
+
+  0x0000028fc6a07398: ;   {metadata('net/runelite/client/chat/QueuedMessage')}
+  0x0000028fc6a07398: 48bf 20ea | 2801 0800 | 0000 448b | 4008 49ba | 0000 0000 | 0800 0000 | 4d03 c249 | 3bf8 0f85 
+  0x0000028fc6a073b8: 8d00 0000 
+
+  0x0000028fc6a073bc: ;   {metadata(method data for {method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a073bc: 48ba 58b3 | 6de8 8f02 | 0000 8b78 | 0849 ba00 | 0000 0008 | 0000 0049 | 03fa 483b | ba58 0100 
+  0x0000028fc6a073dc: 0075 0d48 | 8382 6001 | 0000 01e9 | 7900 0000 | 483b ba68 | 0100 0075 | 0d48 8382 | 7001 0000 
+  0x0000028fc6a073fc: 01e9 6300 | 0000 4883 | ba58 0100 | 0000 7517 | 4889 ba58 | 0100 0048 | c782 6001 | 0000 0100 
+  0x0000028fc6a0741c: 0000 e942 | 0000 0048 | 83ba 6801 | 0000 0075 | 1748 89ba | 6801 0000 | 48c7 8270 | 0100 0001 
+  0x0000028fc6a0743c: 0000 00e9 | 2100 0000 | e91c 0000 
+
+  0x0000028fc6a07448: ;   {metadata(method data for {method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a07448: 0048 ba58 | b36d e88f | 0200 0048 | 83aa 4801 | 0000 01e9 | 0803 0000 | e900 0000 | 0048 8bf0 
+  0x0000028fc6a07468: 4883 fe00 
+
+  0x0000028fc6a0746c: ;   {metadata(method data for {method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a0746c: 49b8 58b3 | 6de8 8f02 | 0000 48ba | 9001 0000 | 0000 0000 | 0f85 0a00 | 0000 48ba | 8001 0000 
+  0x0000028fc6a0748c: 0000 0000 | 498b 3c10 | 488d 7f01 | 4989 3c10 | 0f85 a6fd | ffff 488b 
+
+  0x0000028fc6a074a4: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a074a4: 5424 6048 | be18 a46d | e88f 0200 | 0048 8386 | 2003 0000 | 0148 8b54 
+
+  0x0000028fc6a074bc: ;   {optimized virtual_call}
+  0x0000028fc6a074bc: 2460 90e8 
+
+  0x0000028fc6a074c0: ; ImmutableOopMap {[96]=Oop }
+                      ;*invokevirtual checkWorldMap {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@103 (line 236)
+  0x0000028fc6a074c0: d803 0000 
+
+  0x0000028fc6a074c4: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a074c4: 48b8 18a4 | 6de8 8f02 | 0000 ff80 | 5803 0000 | 4881 c4b0 | 0000 005d 
+
+  0x0000028fc6a074dc: ;   {poll_return}
+  0x0000028fc6a074dc: 493b a778 | 0300 000f | 8788 0200 | 00c3 4881 | c4b0 0000 
+
+  0x0000028fc6a074f0: ;   {poll_return}
+  0x0000028fc6a074f0: 005d 493b | a778 0300 | 000f 8788 | 0200 00c3 | 498b 8728 | 0400 004d | 33d2 4d89 | 9728 0400 
+  0x0000028fc6a07510: 004d 33d2 | 4d89 9730 | 0400 0048 | 8bd0 488d | 8424 9800 | 0000 4c8b | 004d 85c0 | 0f84 0f00 
+  0x0000028fc6a07530: 0000 4c8b | 4808 f04d | 0fb1 010f | 855c 0200 | 0049 ff8f | 7804 0000 
+
+  0x0000028fc6a07548: ; ImmutableOopMap {rax=Oop [96]=Oop }
+                      ;*invokevirtual cull {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@92 (line 232)
+                      ;   {section_word}
+  0x0000028fc6a07548: 488b c248 | ba4b 75a0 | c68f 0200 
+
+  0x0000028fc6a07554: ;   {runtime_call handle_exception_nofpu Runtime1 stub}
+  0x0000028fc6a07554: 00e8 a6d4 | b406 9049 | 8b87 2804 | 0000 4d33 | d24d 8997 | 2804 0000 | 4d33 d24d | 8997 3004 
+  0x0000028fc6a07574: ;   {oop(a 'ch/qos/logback/classic/Logger'{0x00000006040a67f8})}
+  0x0000028fc6a07574: 0000 48bf | f867 0a04 | 0600 0000 
+
+  0x0000028fc6a07580: ;   {metadata(method data for {method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a07580: 4c8b c749 | b918 a46d | e88f 0200 
+
+  0x0000028fc6a0758c: ;   {metadata('ch/qos/logback/classic/Logger')}
+  0x0000028fc6a0758c: 0049 bad0 | 7300 0108 | 0000 004d | 8991 8003 | 0000 4983 | 8188 0300 
+
+  0x0000028fc6a075a4: ;   {oop("error during main loop tasks"{0x0000000604445f28})}
+  0x0000028fc6a075a4: 0001 49b8 | 285f 4404 | 0600 0000 | 4c8b c848 | 8bd7 4889 | 8424 9000 
+
+  0x0000028fc6a075bc: ;   {optimized virtual_call}
+  0x0000028fc6a075bc: 0000 90e8 
+
+  0x0000028fc6a075c0: ; ImmutableOopMap {[96]=Oop [144]=Oop }
+                      ;*invokeinterface error {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@116 (line 240)
+  0x0000028fc6a075c0: 3ccb a706 | 4881 c4b0 | 0000 005d 
+
+  0x0000028fc6a075cc: ;   {poll_return}
+  0x0000028fc6a075cc: 493b a778 | 0300 000f | 87da 0100 
+
+  0x0000028fc6a075d8: ;   {metadata({method} {0x0000028fe6e1cb10} 'tick' '()V' in 'net/runelite/client/callback/Hooks')}
+  0x0000028fc6a075d8: 00c3 49ba | 08cb e1e6 | 8f02 0000 | 4c89 5424 | 0848 c704 | 24ff ffff 
+
+  0x0000028fc6a075f0: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc6a075f0: ffe8 0a1c 
+
+  0x0000028fc6a075f4: ; ImmutableOopMap {rdx=Oop [96]=Oop }
+                      ;*synchronization entry
+                      ; - net.runelite.client.callback.Hooks::tick@-1 (line 203)
+  0x0000028fc6a075f4: b506 e9d1 
+
+  0x0000028fc6a075f8: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a075f8: f4ff ffe8 
+
+  0x0000028fc6a075fc: ; ImmutableOopMap {rdx=Oop rsi=Oop [96]=Oop }
+                      ;*invokevirtual replay {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@16 (line 207)
+  0x0000028fc6a075fc: 00b3 b406 
+
+  0x0000028fc6a07600: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a07600: e8fb b2b4 
+
+  0x0000028fc6a07604: ; ImmutableOopMap {rdx=Oop rsi=Oop [96]=Oop }
+                      ;*invokevirtual post {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@26 (line 209)
+                      ;   {runtime_call throw_incompatible_class_change_error Runtime1 stub}
+  0x0000028fc6a07604: 06e8 f6e2 
+
+  0x0000028fc6a07608: ; ImmutableOopMap {rdx=Oop r8=Oop [96]=Oop }
+                      ;*invokeinterface getTickCount {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@33 (line 211)
+                      ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a07608: b406 e8f1 
+
+  0x0000028fc6a0760c: ; ImmutableOopMap {rdx=Oop r8=Oop [96]=Oop }
+                      ;*invokeinterface getTickCount {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@33 (line 211)
+                      ;   {metadata({method} {0x0000028fe7392858} 'getTickCount' '()I' in 'client')}
+  0x0000028fc6a0760c: b2b4 0649 | ba50 2839 | e78f 0200 | 004c 8954 | 2408 48c7 | 0424 ffff 
+
+  0x0000028fc6a07624: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc6a07624: ffff e8d5 
+
+  0x0000028fc6a07628: ; ImmutableOopMap {rdx=Oop r8=Oop [96]=Oop }
+                      ;*synchronization entry
+                      ; - client::getTickCount@-1 (line 25197)
+                      ; - net.runelite.client.callback.Hooks::tick@33 (line 211)
+  0x0000028fc6a07628: 1bb5 06e9 | 70f6 ffff 
+
+  0x0000028fc6a07630: ;   {runtime_call throw_incompatible_class_change_error Runtime1 stub}
+  0x0000028fc6a07630: e8cb e2b4 
+
+  0x0000028fc6a07634: ; ImmutableOopMap {rdx=Oop r8=Oop rsi=Oop [96]=Oop }
+                      ;*invokeinterface setTickCount {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@46 (line 212)
+                      ;   {metadata({method} {0x0000028fe73967b0} 'setTickCount' '(I)V' in 'client')}
+  0x0000028fc6a07634: 0649 baa8 | 6739 e78f | 0200 004c | 8954 2408 | 48c7 0424 | ffff ffff 
+
+  0x0000028fc6a0764c: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc6a0764c: e8af 1bb5 
+
+  0x0000028fc6a07650: ; ImmutableOopMap {rdx=Oop r8=Oop rsi=Oop [96]=Oop }
+                      ;*synchronization entry
+                      ; - client::setTickCount@-1 (line 21253)
+                      ; - net.runelite.client.callback.Hooks::tick@46 (line 212)
+  0x0000028fc6a07650: 06e9 e3f6 
+
+  0x0000028fc6a07654: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a07654: ffff e8a5 
+
+  0x0000028fc6a07658: ; ImmutableOopMap {rdx=Oop rsi=Oop [96]=Oop }
+                      ;*invokevirtual invoke {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@55 (line 215)
+                      ;   {metadata({method} {0x0000028fe6ebf6c8} 'invoke' '()V' in 'net/runelite/client/callback/ClientThread')}
+  0x0000028fc6a07658: b2b4 0649 | bac0 f6eb | e68f 0200 | 004c 8954 | 2408 48c7 | 0424 ffff 
+
+  0x0000028fc6a07670: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc6a07670: ffff e889 
+
+  0x0000028fc6a07674: ; ImmutableOopMap {rdx=Oop rsi=Oop [96]=Oop }
+                      ;*synchronization entry
+                      ; - net.runelite.client.callback.ClientThread::invoke@-1 (line 101)
+                      ; - net.runelite.client.callback.Hooks::tick@55 (line 215)
+  0x0000028fc6a07674: 1bb5 06e9 | 1df7 ffff 
+
+  0x0000028fc6a0767c: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a0767c: e87f b2b4 
+
+  0x0000028fc6a07680: ; ImmutableOopMap {rdx=Oop rsi=Oop [96]=Oop }
+                      ;*invokevirtual tick {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@85 (line 229)
+                      ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a07680: 06e8 7ab2 
+
+  0x0000028fc6a07684: ; ImmutableOopMap {rdx=Oop rsi=Oop [96]=Oop }
+                      ;*invokevirtual cull {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@92 (line 232)
+  0x0000028fc6a07684: b406 4889 | 7424 0848 
+
+  0x0000028fc6a0768c: ;   {runtime_call monitorenter_nofpu Runtime1 stub}
+  0x0000028fc6a0768c: 893c 24e8 
+
+  0x0000028fc6a07690: ; ImmutableOopMap {rdx=Oop rsi=Oop [96]=Oop [160]=Oop }
+                      ;*synchronization entry
+                      ; - net.runelite.client.ui.overlay.infobox.InfoBoxManager::cull@-1 (line 223)
+                      ; - net.runelite.client.callback.Hooks::tick@92 (line 232)
+  0x0000028fc6a07690: ecef b406 | e952 f8ff 
+
+  0x0000028fc6a07698: ;   {metadata({method} {0x0000028fe702d988} 'cull' '()V' in 'net/runelite/client/ui/overlay/infobox/InfoBoxManager')}
+  0x0000028fc6a07698: ff49 ba80 | d902 e78f | 0200 004c | 8954 2408 | 48c7 0424 | ffff ffff 
+
+  0x0000028fc6a076b0: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc6a076b0: e84b 1bb5 
+
+  0x0000028fc6a076b4: ; ImmutableOopMap {rdx=Oop rsi=Oop [96]=Oop [160]=Oop }
+                      ;*synchronization entry
+                      ; - net.runelite.client.ui.overlay.infobox.InfoBoxManager::cull@-1 (line 223)
+                      ; - net.runelite.client.callback.Hooks::tick@92 (line 232)
+  0x0000028fc6a076b4: 06e9 59f8 
+
+  0x0000028fc6a076b8: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a076b8: ffff e841 
+
+  0x0000028fc6a076bc: ; ImmutableOopMap {rdx=Oop rsi=Oop rdi=Oop [96]=Oop [160]=Oop }
+                      ;*invokeinterface values {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.ui.overlay.infobox.InfoBoxManager::cull@4 (line 223)
+                      ; - net.runelite.client.callback.Hooks::tick@92 (line 232)
+                      ;   {metadata({method} {0x00000008000b28c8} 'linkToTargetMethod' '(Ljava/lang/Object;)Ljava/lang/Object;' in 'java/lang/invoke/Invokers$Holder')}
+  0x0000028fc6a076bc: b2b4 0649 | bac0 280b | 0008 0000 | 004c 8954 | 2408 48c7 | 0424 ffff 
+
+  0x0000028fc6a076d4: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc6a076d4: ffff e825 
+
+  0x0000028fc6a076d8: ; ImmutableOopMap {rax=Oop rdx=Oop [96]=Oop [120]=Oop [160]=Oop }
+                      ;*synchronization entry
+                      ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@-1
+                      ; - net.runelite.client.ui.overlay.infobox.InfoBoxManager::cull@9 (line 223)
+                      ; - net.runelite.client.callback.Hooks::tick@92 (line 232)
+  0x0000028fc6a076d8: 1bb5 06e9 | 4ff9 ffff 
+
+  0x0000028fc6a076e0: ;   {metadata({method} {0x0000028fe6002240} 'invoke' '(Ljava/lang/Object;)Ljava/lang/Object;' in 'java/lang/invoke/LambdaForm$MH+0x0000000801000400')}
+  0x0000028fc6a076e0: 49ba 3822 | 00e6 8f02 | 0000 4c89 | 5424 0848 | c704 24ff 
+
+  0x0000028fc6a076f4: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc6a076f4: ffff ffe8 
+
+  0x0000028fc6a076f8: ; ImmutableOopMap {rax=Oop [96]=Oop [120]=Oop [160]=Oop }
+                      ;*synchronization entry
+                      ; - java.lang.invoke.LambdaForm$MH/0x0000000801000400::invoke@-1
+                      ; - java.lang.invoke.Invokers$Holder::linkToTargetMethod@4
+                      ; - net.runelite.client.ui.overlay.infobox.InfoBoxManager::cull@9 (line 223)
+                      ; - net.runelite.client.callback.Hooks::tick@92 (line 232)
+  0x0000028fc6a076f8: 041b b506 | e984 f9ff 
+
+  0x0000028fc6a07700: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a07700: ffe8 fab1 
+
+  0x0000028fc6a07704: ; ImmutableOopMap {rax=Oop rdx=Oop [96]=Oop [120]=Oop [160]=Oop }
+                      ;*invokeinterface forEach {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.ui.overlay.infobox.InfoBoxManager::cull@14 (line 223)
+                      ; - net.runelite.client.callback.Hooks::tick@92 (line 232)
+  0x0000028fc6a07704: b406 488d | 8424 9800 | 0000 4889 
+
+  0x0000028fc6a07710: ;   {runtime_call monitorexit_nofpu Runtime1 stub}
+  0x0000028fc6a07710: 0424 e869 | f5b4 06e9 | c2fa ffff 
+
+  0x0000028fc6a0771c: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a0771c: e8df b1b4 
+
+  0x0000028fc6a07720: ; ImmutableOopMap {rdx=Oop rsi=Oop [96]=Oop [128]=Oop }
+                      ;*invokevirtual process {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.callback.Hooks::tick@99 (line 234)
+                      ;   {metadata({method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a07720: 0649 ba48 | d2e0 e68f | 0200 004c | 8954 2408 | 48c7 0424 | ffff ffff 
+
+  0x0000028fc6a07738: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc6a07738: e8c3 1ab5 
+
+  0x0000028fc6a0773c: ; ImmutableOopMap {rdx=Oop rsi=Oop [96]=Oop [128]=Oop }
+                      ;*synchronization entry
+                      ; - net.runelite.client.chat.ChatMessageManager::process@-1 (line 808)
+                      ; - net.runelite.client.callback.Hooks::tick@99 (line 234)
+  0x0000028fc6a0773c: 06e9 01fb 
+
+  0x0000028fc6a07740: ;   {metadata({method} {0x0000028fe6e0d250} 'process' '()V' in 'net/runelite/client/chat/ChatMessageManager')}
+  0x0000028fc6a07740: ffff 49ba | 48d2 e0e6 | 8f02 0000 | 4c89 5424 | 0848 c704 | 2416 0000 
+
+  0x0000028fc6a07758: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc6a07758: 00e8 a21a 
+
+  0x0000028fc6a0775c: ; ImmutableOopMap {[96]=Oop [128]=Oop [136]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) net.runelite.client.chat.ChatMessageManager::process@22 (line 810)
+                      ; - net.runelite.client.callback.Hooks::tick@99 (line 234)
+  0x0000028fc6a0775c: b506 e941 
+
+  0x0000028fc6a07760: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a07760: fbff ffe8 
+
+  0x0000028fc6a07764: ; ImmutableOopMap {rsi=Oop rdi=Oop [96]=Oop [128]=Oop }
+                      ;*invokeinterface poll {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.chat.ChatMessageManager::process@4 (line 808)
+                      ; - net.runelite.client.callback.Hooks::tick@99 (line 234)
+  0x0000028fc6a07764: 98b1 b406 | 4889 0424 
+
+  0x0000028fc6a0776c: ;   {runtime_call throw_class_cast_exception Runtime1 stub}
+  0x0000028fc6a0776c: e88f deb4 
+
+  0x0000028fc6a07770: ; ImmutableOopMap {[96]=Oop [128]=Oop }
+                      ;*checkcast {reexecute=0 rethrow=0 return_oop=0}
+                      ; - net.runelite.client.chat.ChatMessageManager::process@9 (line 808)
+                      ; - net.runelite.client.callback.Hooks::tick@99 (line 234)
+                      ;   {internal_word}
+  0x0000028fc6a07770: 0649 badc | 74a0 c68f | 0200 004d | 8997 9003 
+
+  0x0000028fc6a07780: ;   {runtime_call SafepointBlob}
+  0x0000028fc6a07780: 0000 e9f9 
+
+  0x0000028fc6a07784: ;   {internal_word}
+  0x0000028fc6a07784: 35a8 0649 | baf2 74a0 | c68f 0200 | 004d 8997 | 9003 0000 
+
+  0x0000028fc6a07798: ;   {runtime_call SafepointBlob}
+  0x0000028fc6a07798: e9e3 35a8 | 0648 8d84 | 2498 0000 | 0048 8904 
+
+  0x0000028fc6a077a8: ;   {runtime_call monitorexit_nofpu Runtime1 stub}
+  0x0000028fc6a077a8: 24e8 d2f4 | b406 e995 
+
+  0x0000028fc6a077b0: ;   {internal_word}
+  0x0000028fc6a077b0: fdff ff49 | bacc 75a0 | c68f 0200 | 004d 8997 | 9003 0000 
+
+  0x0000028fc6a077c4: ;   {runtime_call SafepointBlob}
+  0x0000028fc6a077c4: e9b7 35a8 | 0649 8b87 | 2804 0000 | 49c7 8728 | 0400 0000 | 0000 0049 | c787 3004 | 0000 0000 
+  0x0000028fc6a077e4: 0000 4881 | c4b0 0000 
+
+  0x0000028fc6a077ec: ;   {runtime_call unwind_exception Runtime1 stub}
+  0x0000028fc6a077ec: 005d e90d | 94b4 06f4 | f4f4 f4f4 
+[Stub Code]
+  0x0000028fc6a077f8: ;   {no_reloc}
+  0x0000028fc6a077f8: 0f1f 4400 
+
+  0x0000028fc6a077fc: ;   {static_stub}
+  0x0000028fc6a077fc: 0048 bb00 | 0000 0000 
+
+  0x0000028fc6a07804: ;   {runtime_call}
+  0x0000028fc6a07804: 0000 00e9 | fbff ffff 
+
+  0x0000028fc6a0780c: ;   {static_stub}
+  0x0000028fc6a0780c: 9048 bb00 | 0000 0000 
+
+  0x0000028fc6a07814: ;   {runtime_call}
+  0x0000028fc6a07814: 0000 00e9 | fbff ffff 
+
+  0x0000028fc6a0781c: ;   {static_stub}
+  0x0000028fc6a0781c: 9048 bb48 | 15e1 e68f 
+
+  0x0000028fc6a07824: ;   {runtime_call I2C/C2I adapters}
+  0x0000028fc6a07824: 0200 00e9 | a712 a806 
+
+  0x0000028fc6a0782c: ;   {static_stub}
+  0x0000028fc6a0782c: 9048 bb00 | 0000 0000 
+
+  0x0000028fc6a07834: ;   {runtime_call}
+  0x0000028fc6a07834: 0000 00e9 | fbff ffff 
+
+  0x0000028fc6a0783c: ;   {static_stub}
+  0x0000028fc6a0783c: 9048 bb00 | 0000 0000 
+
+  0x0000028fc6a07844: ;   {runtime_call}
+  0x0000028fc6a07844: 0000 00e9 | fbff ffff 
+
+  0x0000028fc6a0784c: ;   {static_stub}
+  0x0000028fc6a0784c: 9048 bb00 | 0000 0000 
+
+  0x0000028fc6a07854: ;   {runtime_call}
+  0x0000028fc6a07854: 0000 00e9 | fbff ffff 
+[Exception Handler]
+  0x0000028fc6a0785c: ;   {runtime_call handle_exception_from_callee Runtime1 stub}
+  0x0000028fc6a0785c: e89f d7b4 
+
+  0x0000028fc6a07860: ;   {external_word}
+  0x0000028fc6a07860: 0648 b9b0 | 23fd 83f8 | 7f00 0048 
+
+  0x0000028fc6a0786c: ;   {runtime_call}
+  0x0000028fc6a0786c: 83e4 f048 | b820 16c9 | 83f8 7f00 | 00ff d0f4 
+[Deopt Handler Code]
+  0x0000028fc6a0787c: ;   {section_word}
+  0x0000028fc6a0787c: 49ba 7c78 | a0c6 8f02 | 0000 4152 
+
+  0x0000028fc6a07888: ;   {runtime_call DeoptimizationBlob}
+  0x0000028fc6a07888: e993 27a8 
+
+  0x0000028fc6a0788c: ;   {static_stub}
+  0x0000028fc6a0788c: 0648 bb00 | 0000 0000 
+
+  0x0000028fc6a07894: ;   {runtime_call}
+  0x0000028fc6a07894: 0000 00e9 | fbff ffff 
+
+  0x0000028fc6a0789c: ;   {static_stub}
+  0x0000028fc6a0789c: 48bb b0cd | e1e6 8f02 
+
+  0x0000028fc6a078a4: ;   {runtime_call I2C/C2I adapters}
+  0x0000028fc6a078a4: 0000 e928 
+
+  0x0000028fc6a078a8: ;   {static_stub}
+  0x0000028fc6a078a8: 12a8 0648 | bb00 0000 | 0000 0000 
+
+  0x0000028fc6a078b4: ;   {runtime_call}
+  0x0000028fc6a078b4: 00e9 fbff 
+
+  0x0000028fc6a078b8: ;   {static_stub}
+  0x0000028fc6a078b8: ffff 48bb | 0000 0000 | 0000 0000 
+
+  0x0000028fc6a078c4: ;   {runtime_call}
+  0x0000028fc6a078c4: e9fb ffff | fff4 f4f4 | f4f4 f4f4 
+[/MachCode]
+
+
+Compiled method (c1)    7328 5213       3       client::pa (10 bytes)
+ total in heap  [0x0000028fc6a04410,0x0000028fc6a04818] = 1032
+ relocation     [0x0000028fc6a04558,0x0000028fc6a045a0] = 72
+ main code      [0x0000028fc6a045a0,0x0000028fc6a046f8] = 344
+ stub code      [0x0000028fc6a046f8,0x0000028fc6a04740] = 72
+ oops           [0x0000028fc6a04740,0x0000028fc6a04750] = 16
+ metadata       [0x0000028fc6a04750,0x0000028fc6a04778] = 40
+ scopes data    [0x0000028fc6a04778,0x0000028fc6a04798] = 32
+ scopes pcs     [0x0000028fc6a04798,0x0000028fc6a047f8] = 96
+ dependencies   [0x0000028fc6a047f8,0x0000028fc6a04808] = 16
+ nul chk table  [0x0000028fc6a04808,0x0000028fc6a04818] = 16
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Entry Point]
+  # {method} {0x0000028fe73a32f0} 'pa' '()V' in 'client'
+  #           [sp+0x40]  (sp of caller)
+  0x0000028fc6a045a0: 448b 5208 | 49bb 0000 | 0000 0800 | 0000 4d03 | d34c 3bd0 
+
+  0x0000028fc6a045b4: ;   {runtime_call ic_miss_stub}
+  0x0000028fc6a045b4: 0f85 46f8 | a706 660f | 1f44 0000 
+[Verified Entry Point]
+  0x0000028fc6a045c0: 8984 2400 | 80ff ff55 | 4883 ec30 | 4181 7f20 | 0700 0000 
+
+  0x0000028fc6a045d4: ;   {runtime_call StubRoutines (2)}
+  0x0000028fc6a045d4: 7405 e805 
+
+  0x0000028fc6a045d8: ;   {metadata(method data for {method} {0x0000028fe73a32f0} 'pa' '()V' in 'client')}
+  0x0000028fc6a045d8: fba8 0648 | be28 ad3f | e88f 0200 | 008b becc | 0000 0083 | c702 89be | cc00 0000 | 81e7 fe07 
+  0x0000028fc6a045f8: 0000 83ff | 000f 848c | 0000 008b | b2a4 0100 | 0048 c1e6 | 0348 83fe | 000f 8429 
+
+  0x0000028fc6a04614: ;   {metadata('net/runelite/client/callback/Hooks')}
+  0x0000028fc6a04614: 0000 0048 | b9c0 9722 | 0108 0000 | 008b 4608 | 49ba 0000 | 0000 0800 | 0000 4903 | c248 3b48 
+  0x0000028fc6a04634: 380f 8575 | 0000 00e9 | 0000 0000 | 488b fe48 | 3b06 488b 
+
+  0x0000028fc6a04648: ;   {metadata(method data for {method} {0x0000028fe73a32f0} 'pa' '()V' in 'client')}
+  0x0000028fc6a04648: fe48 bb28 | ad3f e88f 
+
+  0x0000028fc6a04650: ;   {metadata('net/runelite/client/callback/Hooks')}
+  0x0000028fc6a04650: 0200 0049 | bac0 9722 | 0108 0000 | 004c 8993 | 2001 0000 | 4883 8328 | 0100 0001 | 4889 5424 
+  0x0000028fc6a04670: 2048 8bd6 
+
+  0x0000028fc6a04674: ;   {optimized virtual_call}
+  0x0000028fc6a04674: 6666 90e8 
+
+  0x0000028fc6a04678: ; ImmutableOopMap {[32]=Oop }
+                      ;*invokeinterface tick {reexecute=0 rethrow=0 return_oop=0}
+                      ; - client::pa@4 (line 52780)
+  0x0000028fc6a04678: 0424 0000 | 4883 c430 
+
+  0x0000028fc6a04680: ;   {poll_return}
+  0x0000028fc6a04680: 5d49 3ba7 | 7803 0000 | 0f87 2c00 
+
+  0x0000028fc6a0468c: ;   {metadata({method} {0x0000028fe73a32f0} 'pa' '()V' in 'client')}
+  0x0000028fc6a0468c: 0000 c349 | bae8 323a | e78f 0200 | 004c 8954 | 2408 48c7 | 0424 ffff 
+
+  0x0000028fc6a046a4: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000028fc6a046a4: ffff e855 
+
+  0x0000028fc6a046a8: ; ImmutableOopMap {rdx=Oop }
+                      ;*synchronization entry
+                      ; - client::pa@-1 (line 52780)
+  0x0000028fc6a046a8: 4bb5 06e9 | 53ff ffff 
+
+  0x0000028fc6a046b0: ;   {runtime_call throw_incompatible_class_change_error Runtime1 stub}
+  0x0000028fc6a046b0: e84b 12b5 
+
+  0x0000028fc6a046b4: ; ImmutableOopMap {rdx=Oop rsi=Oop }
+                      ;*invokeinterface tick {reexecute=0 rethrow=0 return_oop=0}
+                      ; - client::pa@4 (line 52780)
+                      ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000028fc6a046b4: 06e8 46e2 
+
+  0x0000028fc6a046b8: ; ImmutableOopMap {rdx=Oop rsi=Oop }
+                      ;*invokeinterface tick {reexecute=0 rethrow=0 return_oop=0}
+                      ; - client::pa@4 (line 52780)
+                      ;   {internal_word}
+  0x0000028fc6a046b8: b406 49ba | 8146 a0c6 | 8f02 0000 | 4d89 9790 
+
+  0x0000028fc6a046c8: ;   {runtime_call SafepointBlob}
+  0x0000028fc6a046c8: 0300 00e9 | b066 a806 | 498b 8728 | 0400 0049 | c787 2804 | 0000 0000 | 0000 49c7 | 8730 0400 
+  0x0000028fc6a046e8: 0000 0000 | 0048 83c4 
+
+  0x0000028fc6a046f0: ;   {runtime_call unwind_exception Runtime1 stub}
+  0x0000028fc6a046f0: 305d e909 | c5b4 06f4 
+[Stub Code]
+  0x0000028fc6a046f8: ;   {no_reloc}
+  0x0000028fc6a046f8: 0f1f 4400 
+
+  0x0000028fc6a046fc: ;   {static_stub}
+  0x0000028fc6a046fc: 0048 bb00 | 0000 0000 
+
+  0x0000028fc6a04704: ;   {runtime_call}
+  0x0000028fc6a04704: 0000 00e9 | fbff ffff 
+[Exception Handler]
+  0x0000028fc6a0470c: ;   {runtime_call handle_exception_from_callee Runtime1 stub}
+  0x0000028fc6a0470c: e8ef 08b5 
+
+  0x0000028fc6a04710: ;   {external_word}
+  0x0000028fc6a04710: 0648 b9b0 | 23fd 83f8 | 7f00 0048 
+
+  0x0000028fc6a0471c: ;   {runtime_call}
+  0x0000028fc6a0471c: 83e4 f048 | b820 16c9 | 83f8 7f00 | 00ff d0f4 
+[Deopt Handler Code]
+  0x0000028fc6a0472c: ;   {section_word}
+  0x0000028fc6a0472c: 49ba 2c47 | a0c6 8f02 | 0000 4152 
+
+  0x0000028fc6a04738: ;   {runtime_call DeoptimizationBlob}
+  0x0000028fc6a04738: e9e3 58a8 | 06f4 f4f4 
+[/MachCode]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000028ff64a39a0, length=55, elements={
+0x0000028fe5601bd0, 0x0000028fe5604b20, 0x0000028fe5607c60, 0x0000028fe560ac80,
+0x0000028fe560d840, 0x0000028fe560e180, 0x0000028fe560b6c0, 0x0000028fe560d050,
+0x0000028fe56e5a50, 0x0000028fe5808a50, 0x0000028fe5817320, 0x0000028fe5817c90,
+0x0000028fe5719820, 0x0000028fe572d970, 0x0000028feaf72060, 0x0000028feaf735c0,
+0x0000028feaf6c050, 0x0000028feabb7070, 0x0000028ff2324b40, 0x0000028ff2326b20,
+0x0000028ff2325090, 0x0000028ff23240a0, 0x0000028ff23245f0, 0x0000028ff3243520,
+0x0000028ff3242470, 0x0000028ff32477e0, 0x0000028ff23255e0, 0x0000028ff23265d0,
+0x0000028ff2326080, 0x0000028ff2325b30, 0x0000028ff2327070, 0x0000028ff23275c0,
+0x0000028ff46fea70, 0x0000028ff46f7040, 0x0000028ff46fcfe0, 0x0000028ff46f7590,
+0x0000028ff3244040, 0x0000028ff3242f90, 0x0000028ff3247d70, 0x0000028ff32445d0,
+0x0000028ff3242a00, 0x0000028ff3248300, 0x0000028ff3247250, 0x0000028ff32450f0,
+0x0000028ff3243ab0, 0x0000028ff46f7ae0, 0x0000028ff46fe520, 0x0000028ff46f9ac0,
+0x0000028ff46f8030, 0x0000028ff46f8ad0, 0x0000028ff46fb000, 0x0000028ff46fb550,
+0x0000028ff46fd530, 0x0000028ff89e8830, 0x0000028ff89ead60
+}
+
+Java Threads: ( => current thread )
+  0x0000028fe5601bd0 JavaThread "Reference Handler" daemon [_thread_blocked, id=34556, stack(0x000000e69e900000,0x000000e69ea00000)]
+  0x0000028fe5604b20 JavaThread "Finalizer" daemon [_thread_blocked, id=16416, stack(0x000000e69ea00000,0x000000e69eb00000)]
+  0x0000028fe5607c60 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4876, stack(0x000000e69eb00000,0x000000e69ec00000)]
+  0x0000028fe560ac80 JavaThread "Attach Listener" daemon [_thread_blocked, id=33524, stack(0x000000e69ec00000,0x000000e69ed00000)]
+  0x0000028fe560d840 JavaThread "Service Thread" daemon [_thread_blocked, id=31616, stack(0x000000e69ed00000,0x000000e69ee00000)]
+  0x0000028fe560e180 JavaThread "Monitor Deflation Thread" daemon [_thread_blocked, id=21352, stack(0x000000e69ee00000,0x000000e69ef00000)]
+  0x0000028fe560b6c0 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=17828, stack(0x000000e69ef00000,0x000000e69f000000)]
+  0x0000028fe560d050 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=8444, stack(0x000000e69f000000,0x000000e69f100000)]
+  0x0000028fe56e5a50 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=22808, stack(0x000000e69f100000,0x000000e69f200000)]
+  0x0000028fe5808a50 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=28844, stack(0x000000e69f200000,0x000000e69f300000)]
+  0x0000028fe5817320 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=31720, stack(0x000000e69f300000,0x000000e69f400000)]
+  0x0000028fe5817c90 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=24652, stack(0x000000e69f400000,0x000000e69f500000)]
+  0x0000028fe5719820 JavaThread "Notification Thread" daemon [_thread_blocked, id=25608, stack(0x000000e69f500000,0x000000e69f600000)]
+  0x0000028fe572d970 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=14916, stack(0x000000e69f700000,0x000000e69f800000)]
+  0x0000028feaf72060 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=28812, stack(0x000000e6a1200000,0x000000e6a1300000)]
+  0x0000028feaf735c0 JavaThread "AWT-Shutdown" [_thread_blocked, id=30868, stack(0x000000e6a1300000,0x000000e6a1400000)]
+  0x0000028feaf6c050 JavaThread "AWT-Windows" daemon [_thread_in_native, id=25844, stack(0x000000e6a1400000,0x000000e6a1500000)]
+  0x0000028feabb7070 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=38488, stack(0x000000e6a1500000,0x000000e6a1600000)]
+  0x0000028ff2324b40 JavaThread "TimerQueue" daemon [_thread_blocked, id=15412, stack(0x000000e69fe00000,0x000000e69ff00000)]
+  0x0000028ff2326b20 JavaThread "D3D Screen Updater" daemon [_thread_blocked, id=33688, stack(0x000000e6a1790000,0x000000e6a1890000)]
+  0x0000028ff2325090 JavaThread "OkHttp Dispatcher" [_thread_blocked, id=15864, stack(0x000000e6a1890000,0x000000e6a1990000)]
+  0x0000028ff23240a0 JavaThread "OkHttp ConnectionPool" daemon [_thread_blocked, id=15720, stack(0x000000e6a27a0000,0x000000e6a28a0000)]
+  0x0000028ff23245f0 JavaThread "Okio Watchdog" daemon [_thread_blocked, id=37448, stack(0x000000e6a28a0000,0x000000e6a29a0000)]
+  0x0000028ff3243520 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=33052, stack(0x000000e69f800000,0x000000e69f900000)]
+  0x0000028ff3242470 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=15292, stack(0x000000e69f900000,0x000000e69fa00000)]
+  0x0000028ff32477e0 JavaThread "C1 CompilerThread4" daemon [_thread_blocked, id=25772, stack(0x000000e69fa00000,0x000000e69fb00000)]
+  0x0000028ff23255e0 JavaThread "pool-3-thread-1" [_thread_blocked, id=38152, stack(0x000000e6a26a0000,0x000000e6a27a0000)]
+  0x0000028ff23265d0 JavaThread "pool-2-thread-1" [_thread_blocked, id=9756, stack(0x000000e6a25a0000,0x000000e6a26a0000)]
+  0x0000028ff2326080 JavaThread "Thread-0" daemon [_thread_blocked, id=35480, stack(0x000000e6a1990000,0x000000e6a1a90000)]
+=>0x0000028ff2325b30 JavaThread "Client" daemon [_thread_in_native, id=22404, stack(0x000000e6a29a0000,0x000000e6a2aa0000)]
+  0x0000028ff2327070 JavaThread "Thread-2" daemon [_thread_blocked, id=9784, stack(0x000000e6a2aa0000,0x000000e6a2ba0000)]
+  0x0000028ff23275c0 JavaThread "OkHttp api.runelite.net Writer" [_thread_blocked, id=29200, stack(0x000000e6a2ba0000,0x000000e6a2ca0000)]
+  0x0000028ff46fea70 JavaThread "OkHttp api.runelite.net" [_thread_in_native, id=10976, stack(0x000000e6a2ca0000,0x000000e6a2da0000)]
+  0x0000028ff46f7040 JavaThread "Thread-4" daemon [_thread_in_native, id=17320, stack(0x000000e6a2da0000,0x000000e6a2ea0000)]
+  0x0000028ff46fcfe0 JavaThread "Thread-5" daemon [_thread_blocked, id=33000, stack(0x000000e6a2ea0000,0x000000e6a2fa0000)]
+  0x0000028ff46f7590 JavaThread "OkHttp Http2Connection" daemon [_thread_blocked, id=35316, stack(0x000000e6a24a0000,0x000000e6a25a0000)]
+  0x0000028ff3244040 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=11064, stack(0x000000e69fb00000,0x000000e69fc00000)]
+  0x0000028ff3242f90 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=22032, stack(0x000000e69fd00000,0x000000e69fe00000)]
+  0x0000028ff3247d70 JavaThread "C2 CompilerThread3" daemon [_thread_blocked, id=22816, stack(0x000000e6a2fa0000,0x000000e6a30a0000)]
+  0x0000028ff32445d0 JavaThread "C2 CompilerThread4" daemon [_thread_blocked, id=27068, stack(0x000000e6a30a0000,0x000000e6a31a0000)]
+  0x0000028ff3242a00 JavaThread "C2 CompilerThread5" daemon [_thread_blocked, id=3064, stack(0x000000e6a31a0000,0x000000e6a32a0000)]
+  0x0000028ff3248300 JavaThread "C2 CompilerThread6" daemon [_thread_blocked, id=25132, stack(0x000000e6a32a0000,0x000000e6a33a0000)]
+  0x0000028ff3247250 JavaThread "C2 CompilerThread7" daemon [_thread_blocked, id=9680, stack(0x000000e6a33a0000,0x000000e6a34a0000)]
+  0x0000028ff32450f0 JavaThread "C2 CompilerThread8" daemon [_thread_blocked, id=15860, stack(0x000000e6a34a0000,0x000000e6a35a0000)]
+  0x0000028ff3243ab0 JavaThread "C2 CompilerThread9" daemon [_thread_blocked, id=30964, stack(0x000000e6a35a0000,0x000000e6a36a0000)]
+  0x0000028ff46f7ae0 JavaThread "cache io" daemon [_thread_blocked, id=14108, stack(0x000000e6a36a0000,0x000000e6a37a0000)]
+  0x0000028ff46fe520 JavaThread "Java Sound Event Dispatcher" daemon [_thread_blocked, id=7068, stack(0x000000e6a39a0000,0x000000e6a3aa0000)]
+  0x0000028ff46f9ac0 JavaThread "pool-5-thread-1" [_thread_blocked, id=7088, stack(0x000000e6a3da0000,0x000000e6a3ea0000)]
+  0x0000028ff46f8030 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=17896, stack(0x000000e6a40a0000,0x000000e6a41a0000)]
+  0x0000028ff46f8ad0 JavaThread "Substance heap status" daemon [_thread_blocked, id=13068, stack(0x000000e6a41a0000,0x000000e6a42a0000)]
+  0x0000028ff46fb000 JavaThread "Thread-8" daemon [_thread_blocked, id=7304, stack(0x000000e6a43a0000,0x000000e6a44a0000)]
+  0x0000028ff46fb550 JavaThread "pool-6-thread-1" [_thread_in_native, id=23572, stack(0x000000e6a44a0000,0x000000e6a45a0000)]
+  0x0000028ff46fd530 JavaThread "Trident callback thread" daemon [_thread_blocked, id=9476, stack(0x000000e6a45a0000,0x000000e6a46a0000)]
+  0x0000028ff89e8830 JavaThread "Trident pulse source thread" daemon [_thread_blocked, id=17088, stack(0x000000e6a46a0000,0x000000e6a47a0000)]
+  0x0000028ff89ead60 JavaThread "DestroyJavaVM" [_thread_blocked, id=12324, stack(0x000000e69e200000,0x000000e69e300000)]
+
+Other Threads:
+  0x0000028fbc7b96b0 VMThread "VM Thread" [stack: 0x000000e69e800000,0x000000e69e900000] [id=21588]
+  0x0000028fe571b5b0 WatcherThread "VM Periodic Task Thread" [stack: 0x000000e69f600000,0x000000e69f700000] [id=22292]
+  0x0000028fbc7b93e0 WorkerThread "GC Thread#0" [stack: 0x000000e69e300000,0x000000e69e400000] [id=27828]
+  0x0000028fbc7b9980 WorkerThread "GC Thread#1" [stack: 0x000000e69ff00000,0x000000e6a0000000] [id=34244]
+  0x0000028fea2ae210 WorkerThread "GC Thread#2" [stack: 0x000000e6a0000000,0x000000e6a0100000] [id=1320]
+  0x0000028fea2adf40 WorkerThread "GC Thread#3" [stack: 0x000000e6a0100000,0x000000e6a0200000] [id=13912]
+  0x0000028fea2b14b0 WorkerThread "GC Thread#4" [stack: 0x000000e6a0200000,0x000000e6a0300000] [id=33784]
+  0x0000028fea2ae4e0 WorkerThread "GC Thread#5" [stack: 0x000000e6a0300000,0x000000e6a0400000] [id=12636]
+  0x0000028fea2adc70 WorkerThread "GC Thread#6" [stack: 0x000000e6a0400000,0x000000e6a0500000] [id=14704]
+  0x0000028fea2afb60 WorkerThread "GC Thread#7" [stack: 0x000000e6a0500000,0x000000e6a0600000] [id=8540]
+  0x0000028fea2b11e0 WorkerThread "GC Thread#8" [stack: 0x000000e6a0600000,0x000000e6a0700000] [id=29572]
+  0x0000028fea2b03d0 WorkerThread "GC Thread#9" [stack: 0x000000e6a0700000,0x000000e6a0800000] [id=14388]
+  0x0000028fea2ad9a0 WorkerThread "GC Thread#10" [stack: 0x000000e6a0800000,0x000000e6a0900000] [id=10612]
+  0x0000028fea2afe30 WorkerThread "GC Thread#11" [stack: 0x000000e6a0900000,0x000000e6a0a00000] [id=5656]
+  0x0000028fea2b0100 WorkerThread "GC Thread#12" [stack: 0x000000e6a0b00000,0x000000e6a0c00000] [id=25932]
+  0x0000028fea2aed50 WorkerThread "GC Thread#13" [stack: 0x000000e6a0c00000,0x000000e6a0d00000] [id=16824]
+  0x0000028fea2b0c40 WorkerThread "GC Thread#14" [stack: 0x000000e6a0d00000,0x000000e6a0e00000] [id=2268]
+  0x0000028fea2af5c0 WorkerThread "GC Thread#15" [stack: 0x000000e6a0e00000,0x000000e6a0f00000] [id=19328]
+  0x0000028fea2af020 WorkerThread "GC Thread#16" [stack: 0x000000e6a0f00000,0x000000e6a1000000] [id=9124]
+  0x0000028fea2af2f0 WorkerThread "GC Thread#17" [stack: 0x000000e6a1000000,0x000000e6a1100000] [id=30108]
+  0x0000028fea2af890 WorkerThread "GC Thread#18" [stack: 0x000000e6a1100000,0x000000e6a1200000] [id=24280]
+  0x0000028ff2305720 WorkerThread "GC Thread#19" [stack: 0x000000e6a1ba0000,0x000000e6a1ca0000] [id=29032]
+  0x0000028ff2304eb0 WorkerThread "GC Thread#20" [stack: 0x000000e6a1ca0000,0x000000e6a1da0000] [id=23724]
+  0x0000028ff2304910 WorkerThread "GC Thread#21" [stack: 0x000000e6a1da0000,0x000000e6a1ea0000] [id=37764]
+  0x0000028ff23059f0 WorkerThread "GC Thread#22" [stack: 0x000000e6a1ea0000,0x000000e6a1fa0000] [id=35848]
+  0x0000028fe1afc0f0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000e69e400000,0x000000e69e500000] [id=27900]
+  0x0000028fbc7b85d0 WorkerThread "G1 Conc#0" [stack: 0x000000e69e500000,0x000000e69e600000] [id=32612]
+  0x0000028ff2303dd0 WorkerThread "G1 Conc#1" [stack: 0x000000e6a1fa0000,0x000000e6a20a0000] [id=38744]
+  0x0000028ff2306800 WorkerThread "G1 Conc#2" [stack: 0x000000e6a20a0000,0x000000e6a21a0000] [id=17984]
+  0x0000028ff2305180 WorkerThread "G1 Conc#3" [stack: 0x000000e6a21a0000,0x000000e6a22a0000] [id=27800]
+  0x0000028ff2302cf0 WorkerThread "G1 Conc#4" [stack: 0x000000e6a22a0000,0x000000e6a23a0000] [id=18696]
+  0x0000028ff23040a0 WorkerThread "G1 Conc#5" [stack: 0x000000e6a23a0000,0x000000e6a24a0000] [id=8700]
+  0x0000028fe1c124a0 ConcurrentGCThread "G1 Refine#0" [stack: 0x000000e69e600000,0x000000e69e700000] [id=33880]
+  0x0000028fe1c12de0 ConcurrentGCThread "G1 Service" [stack: 0x000000e69e700000,0x000000e69e800000] [id=30656]
+
+Threads with active compile tasks:
+
+VM state: not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x0000000602c00000, size: 8148 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000800000000-0x0000000800c60000-0x0000000800c60000), size 12976128, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Compressed class space mapped at: 0x0000000801000000-0x0000000841000000, reserved size: 1073741824
+Narrow klass base: 0x0000000800000000, Narrow klass shift: 0, Narrow klass range: 0x100000000
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 32 size 80 Howl #buckets 8 coarsen threshold 7372 Howl Bitmap #cards 1024 size 144 coarsen threshold 921 Card regions per heap region 1 cards per card region 8192
+ CPUs: 32 total, 32 available
+ Memory: 32580M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (Zero based)
+ Heap Region Size: 4M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 512M
+ Heap Max Capacity: 8148M
+ Pre-touch: Disabled
+ Parallel Workers: 23
+ Concurrent Workers: 6
+ Concurrent Refinement Workers: 23
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total 253952K, used 171896K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 23 young (94208K), 4 survivors (16384K)
+ Metaspace       used 76192K, committed 77376K, reserved 1179648K
+  class space    used 8427K, committed 8960K, reserved 1048576K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, OA=open archive, CA=closed archive, TAMS=top-at-mark-start, PB=parsable bottom
+|   0|0x0000000602c00000, 0x0000000603000000, 0x0000000603000000|100%| O|  |TAMS 0x0000000602c00000| PB 0x0000000602c00000| Untracked 
+|   1|0x0000000603000000, 0x0000000603400000, 0x0000000603400000|100%| O|  |TAMS 0x0000000603000000| PB 0x0000000603000000| Untracked 
+|   2|0x0000000603400000, 0x0000000603800000, 0x0000000603800000|100%| O|  |TAMS 0x0000000603400000| PB 0x0000000603400000| Untracked 
+|   3|0x0000000603800000, 0x0000000603c00000, 0x0000000603c00000|100%| O|  |TAMS 0x0000000603800000| PB 0x0000000603800000| Untracked 
+|   4|0x0000000603c00000, 0x0000000603c00000, 0x0000000604000000|  0%| F|  |TAMS 0x0000000603c00000| PB 0x0000000603c00000| Untracked 
+|   5|0x0000000604000000, 0x0000000604400000, 0x0000000604400000|100%| O|  |TAMS 0x0000000604000000| PB 0x0000000604000000| Untracked 
+|   6|0x0000000604400000, 0x0000000604800000, 0x0000000604800000|100%| O|  |TAMS 0x0000000604400000| PB 0x0000000604400000| Untracked 
+|   7|0x0000000604800000, 0x0000000604c00000, 0x0000000604c00000|100%| O|  |TAMS 0x0000000604800000| PB 0x0000000604800000| Untracked 
+|   8|0x0000000604c00000, 0x0000000605000000, 0x0000000605000000|100%| O|  |TAMS 0x0000000604c00000| PB 0x0000000604c00000| Untracked 
+|   9|0x0000000605000000, 0x0000000605400000, 0x0000000605400000|100%| O|  |TAMS 0x0000000605000000| PB 0x0000000605000000| Untracked 
+|  10|0x0000000605400000, 0x0000000605400000, 0x0000000605800000|  0%| F|  |TAMS 0x0000000605400000| PB 0x0000000605400000| Untracked 
+|  11|0x0000000605800000, 0x0000000605800000, 0x0000000605c00000|  0%| F|  |TAMS 0x0000000605800000| PB 0x0000000605800000| Untracked 
+|  12|0x0000000605c00000, 0x0000000605c00000, 0x0000000606000000|  0%| F|  |TAMS 0x0000000605c00000| PB 0x0000000605c00000| Untracked 
+|  13|0x0000000606000000, 0x0000000606000000, 0x0000000606400000|  0%| F|  |TAMS 0x0000000606000000| PB 0x0000000606000000| Untracked 
+|  14|0x0000000606400000, 0x0000000606800000, 0x0000000606800000|100%| O|  |TAMS 0x0000000606400000| PB 0x0000000606400000| Untracked 
+|  15|0x0000000606800000, 0x0000000606c00000, 0x0000000606c00000|100%| O|  |TAMS 0x0000000606800000| PB 0x0000000606800000| Untracked 
+|  16|0x0000000606c00000, 0x0000000607000000, 0x0000000607000000|100%| O|  |TAMS 0x0000000606c00000| PB 0x0000000606c00000| Untracked 
+|  17|0x0000000607000000, 0x0000000607400000, 0x0000000607400000|100%| O|  |TAMS 0x0000000607000000| PB 0x0000000607000000| Untracked 
+|  18|0x0000000607400000, 0x0000000607427a00, 0x0000000607800000|  3%| O|  |TAMS 0x0000000607400000| PB 0x0000000607400000| Untracked 
+|  19|0x0000000607800000, 0x0000000607800000, 0x0000000607c00000|  0%| F|  |TAMS 0x0000000607800000| PB 0x0000000607800000| Untracked 
+|  20|0x0000000607c00000, 0x0000000607c00000, 0x0000000608000000|  0%| F|  |TAMS 0x0000000607c00000| PB 0x0000000607c00000| Untracked 
+|  21|0x0000000608000000, 0x0000000608000000, 0x0000000608400000|  0%| F|  |TAMS 0x0000000608000000| PB 0x0000000608000000| Untracked 
+|  22|0x0000000608400000, 0x0000000608400000, 0x0000000608800000|  0%| F|  |TAMS 0x0000000608400000| PB 0x0000000608400000| Untracked 
+|  23|0x0000000608800000, 0x0000000608800000, 0x0000000608c00000|  0%| F|  |TAMS 0x0000000608800000| PB 0x0000000608800000| Untracked 
+|  24|0x0000000608c00000, 0x0000000608c00000, 0x0000000609000000|  0%| F|  |TAMS 0x0000000608c00000| PB 0x0000000608c00000| Untracked 
+|  25|0x0000000609000000, 0x0000000609000000, 0x0000000609400000|  0%| F|  |TAMS 0x0000000609000000| PB 0x0000000609000000| Untracked 
+|  26|0x0000000609400000, 0x0000000609400000, 0x0000000609800000|  0%| F|  |TAMS 0x0000000609400000| PB 0x0000000609400000| Untracked 
+|  27|0x0000000609800000, 0x0000000609bb6940, 0x0000000609c00000| 92%| S|CS|TAMS 0x0000000609800000| PB 0x0000000609800000| Complete 
+|  28|0x0000000609c00000, 0x000000060a000000, 0x000000060a000000|100%| S|CS|TAMS 0x0000000609c00000| PB 0x0000000609c00000| Complete 
+|  29|0x000000060a000000, 0x000000060a400000, 0x000000060a400000|100%| S|CS|TAMS 0x000000060a000000| PB 0x000000060a000000| Complete 
+|  30|0x000000060a400000, 0x000000060a800000, 0x000000060a800000|100%| S|CS|TAMS 0x000000060a400000| PB 0x000000060a400000| Complete 
+|  31|0x000000060a800000, 0x000000060a800000, 0x000000060ac00000|  0%| F|  |TAMS 0x000000060a800000| PB 0x000000060a800000| Untracked 
+|  32|0x000000060ac00000, 0x000000060ac00000, 0x000000060b000000|  0%| F|  |TAMS 0x000000060ac00000| PB 0x000000060ac00000| Untracked 
+|  33|0x000000060b000000, 0x000000060b000000, 0x000000060b400000|  0%| F|  |TAMS 0x000000060b000000| PB 0x000000060b000000| Untracked 
+|  34|0x000000060b400000, 0x000000060b400000, 0x000000060b800000|  0%| F|  |TAMS 0x000000060b400000| PB 0x000000060b400000| Untracked 
+|  35|0x000000060b800000, 0x000000060b800000, 0x000000060bc00000|  0%| F|  |TAMS 0x000000060b800000| PB 0x000000060b800000| Untracked 
+|  36|0x000000060bc00000, 0x000000060bea6710, 0x000000060c000000| 66%| E|  |TAMS 0x000000060bc00000| PB 0x000000060bc00000| Complete 
+|  37|0x000000060c000000, 0x000000060c400000, 0x000000060c400000|100%| E|CS|TAMS 0x000000060c000000| PB 0x000000060c000000| Complete 
+|  38|0x000000060c400000, 0x000000060c800000, 0x000000060c800000|100%| E|CS|TAMS 0x000000060c400000| PB 0x000000060c400000| Complete 
+|  39|0x000000060c800000, 0x000000060cc00000, 0x000000060cc00000|100%| E|CS|TAMS 0x000000060c800000| PB 0x000000060c800000| Complete 
+|  40|0x000000060cc00000, 0x000000060d000000, 0x000000060d000000|100%| E|CS|TAMS 0x000000060cc00000| PB 0x000000060cc00000| Complete 
+|  41|0x000000060d000000, 0x000000060d400000, 0x000000060d400000|100%| E|CS|TAMS 0x000000060d000000| PB 0x000000060d000000| Complete 
+|  42|0x000000060d400000, 0x000000060d800000, 0x000000060d800000|100%| E|CS|TAMS 0x000000060d400000| PB 0x000000060d400000| Complete 
+|  43|0x000000060d800000, 0x000000060dc00000, 0x000000060dc00000|100%| E|CS|TAMS 0x000000060d800000| PB 0x000000060d800000| Complete 
+|  44|0x000000060dc00000, 0x000000060e000000, 0x000000060e000000|100%| E|CS|TAMS 0x000000060dc00000| PB 0x000000060dc00000| Complete 
+|  45|0x000000060e000000, 0x000000060e400000, 0x000000060e400000|100%| E|CS|TAMS 0x000000060e000000| PB 0x000000060e000000| Complete 
+|  46|0x000000060e400000, 0x000000060e800000, 0x000000060e800000|100%| E|CS|TAMS 0x000000060e400000| PB 0x000000060e400000| Complete 
+|  47|0x000000060e800000, 0x000000060ec00000, 0x000000060ec00000|100%| E|CS|TAMS 0x000000060e800000| PB 0x000000060e800000| Complete 
+|  48|0x000000060ec00000, 0x000000060f000000, 0x000000060f000000|100%| E|CS|TAMS 0x000000060ec00000| PB 0x000000060ec00000| Complete 
+|  49|0x000000060f000000, 0x000000060f400000, 0x000000060f400000|100%| E|CS|TAMS 0x000000060f000000| PB 0x000000060f000000| Complete 
+|  50|0x000000060f400000, 0x000000060f800000, 0x000000060f800000|100%| E|CS|TAMS 0x000000060f400000| PB 0x000000060f400000| Complete 
+|  51|0x000000060f800000, 0x000000060fc00000, 0x000000060fc00000|100%| E|CS|TAMS 0x000000060f800000| PB 0x000000060f800000| Complete 
+|  52|0x000000060fc00000, 0x0000000610000000, 0x0000000610000000|100%| E|CS|TAMS 0x000000060fc00000| PB 0x000000060fc00000| Complete 
+| 121|0x0000000621000000, 0x0000000621400000, 0x0000000621400000|100%| E|CS|TAMS 0x0000000621000000| PB 0x0000000621000000| Complete 
+| 127|0x0000000622800000, 0x0000000622c00000, 0x0000000622c00000|100%| E|CS|TAMS 0x0000000622800000| PB 0x0000000622800000| Complete 
+|2030|0x00000007fe400000, 0x00000007fe800000, 0x00000007fe800000|100%| O|  |TAMS 0x00000007fe400000| PB 0x00000007fe400000| Untracked 
+|2031|0x00000007fe800000, 0x00000007fec00000, 0x00000007fec00000|100%| O|  |TAMS 0x00000007fe800000| PB 0x00000007fe800000| Untracked 
+|2032|0x00000007fec00000, 0x00000007ff000000, 0x00000007ff000000|100%| O|  |TAMS 0x00000007fec00000| PB 0x00000007fec00000| Untracked 
+|2033|0x00000007ff000000, 0x00000007ff400000, 0x00000007ff400000|100%| O|  |TAMS 0x00000007ff000000| PB 0x00000007ff000000| Untracked 
+|2034|0x00000007ff400000, 0x00000007ff800000, 0x00000007ff800000|100%| O|  |TAMS 0x00000007ff400000| PB 0x00000007ff400000| Untracked 
+|2035|0x00000007ff800000, 0x00000007ffc00000, 0x00000007ffc00000|100%| O|  |TAMS 0x00000007ff800000| PB 0x00000007ff800000| Untracked 
+|2036|0x00000007ffc00000, 0x0000000800000000, 0x0000000800000000|100%| O|  |TAMS 0x00000007ffc00000| PB 0x00000007ffc00000| Untracked 
+
+Card table byte_map: [0x0000028fd7a70000,0x0000028fd8a60000] _byte_map_base: 0x0000028fd4a5a000
+
+Marking Bits: (CMBitMap*) 0x0000028fbc8494d0
+ Bits: [0x0000028fd9a50000, 0x0000028fe19a0000)
+
+Polling page: 0x0000028fbc850000
+
+Metaspace:
+
+Usage:
+  Non-class:     66.18 MB used.
+      Class:      8.23 MB used.
+       Both:     74.41 MB used.
+
+Virtual space:
+  Non-class space:      128.00 MB reserved,      66.81 MB ( 52%) committed,  2 nodes.
+      Class space:        1.00 GB reserved,       8.75 MB ( <1%) committed,  1 nodes.
+             Both:        1.12 GB reserved,      75.56 MB (  7%) committed. 
+
+Chunk freelists:
+   Non-Class:  288.00 KB
+       Class:  3.28 MB
+        Both:  3.57 MB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 99.38 MB
+CDS: on
+MetaspaceReclaimPolicy: balanced
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+ - new_chunks_are_fully_committed: 0.
+ - uncommit_free_chunks: 1.
+ - use_allocation_guard: 0.
+
+
+Internal statistics:
+
+num_allocs_failed_limit: 12.
+num_arena_births: 1546.
+num_arena_deaths: 0.
+num_vsnodes_births: 3.
+num_vsnodes_deaths: 0.
+num_space_committed: 1205.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 12.
+num_chunks_taken_from_freelist: 3937.
+num_chunk_merges: 12.
+num_chunk_splits: 2662.
+num_chunks_enlarged: 1767.
+num_inconsistent_stats: 0.
+
+CodeHeap 'non-profiled nmethods': size=118848Kb used=8020Kb max_used=8020Kb free=110827Kb
+ bounds [0x0000028fcdc00000, 0x0000028fce3e0000, 0x0000028fd5010000]
+CodeHeap 'profiled nmethods': size=118848Kb used=23297Kb max_used=23297Kb free=95550Kb
+ bounds [0x0000028fc6010000, 0x0000028fc76e0000, 0x0000028fcd420000]
+CodeHeap 'non-nmethods': size=8064Kb used=4517Kb max_used=4593Kb free=3547Kb
+ bounds [0x0000028fcd420000, 0x0000028fcd8b0000, 0x0000028fcdc00000]
+ total_blobs=10936 nmethods=9844 adapters=994
+ compilation: enabled
+              stopped_count=0, restarted_count=0
+ full_count=0
+
+Compilation events (20 events):
+Event: 7.244 Thread 0x0000028ff32477e0 10426       3       java.util.regex.Pattern$GroupTail::<init> (17 bytes)
+Event: 7.244 Thread 0x0000028ff3242470 nmethod 10425 0x0000028fc76c8d90 code [0x0000028fc76c8f20, 0x0000028fc76c9168]
+Event: 7.244 Thread 0x0000028ff32477e0 nmethod 10426 0x0000028fc76c9210 code [0x0000028fc76c93a0, 0x0000028fc76c95f0]
+Event: 7.244 Thread 0x0000028ff3243520 10427       3       java.lang.StrictMath::ceil (10 bytes)
+Event: 7.245 Thread 0x0000028ff3243520 nmethod 10427 0x0000028fc76c9710 code [0x0000028fc76c98c0, 0x0000028fc76c99f8]
+Event: 7.246 Thread 0x0000028ff3247d70 nmethod 10394 0x0000028fce3ca810 code [0x0000028fce3caa00, 0x0000028fce3cbde0]
+Event: 7.247 Thread 0x0000028ff3244040 10428       4       java.util.jar.Attributes::putValue (13 bytes)
+Event: 7.248 Thread 0x0000028ff32450f0 nmethod 10401 0x0000028fce3cc990 code [0x0000028fce3ccc00, 0x0000028fce3cdff8]
+Event: 7.248 Thread 0x0000028fe56e5a50 10429       3       sun.nio.ch.Util::getTemporaryDirectBuffer (55 bytes)
+Event: 7.248 Thread 0x0000028fe56e5a50 nmethod 10429 0x0000028fc76c9a90 code [0x0000028fc76c9d00, 0x0000028fc76ca870]
+Event: 7.248 Thread 0x0000028ff3243ab0 nmethod 10424 0x0000028fce3cec90 code [0x0000028fce3ceec0, 0x0000028fce3cff30]
+Event: 7.250 Thread 0x0000028ff3242a00 10430       4       java.nio.ByteBuffer::put (124 bytes)
+Event: 7.250 Thread 0x0000028ff3248300 10431       4       java.nio.HeapByteBuffer::put (12 bytes)
+Event: 7.250 Thread 0x0000028ff3243ab0 10432       4       java.util.regex.Pattern$BmpCharProperty::match (55 bytes)
+Event: 7.252 Thread 0x0000028ff3243ab0 nmethod 10432 0x0000028fce3d0910 code [0x0000028fce3d0aa0, 0x0000028fce3d0d20]
+Event: 7.253 Thread 0x0000028ff3244040 nmethod 10428 0x0000028fce3d0f90 code [0x0000028fce3d1160, 0x0000028fce3d1ac0]
+Event: 7.255 Thread 0x0000028ff3248300 nmethod 10431 0x0000028fce3d2290 code [0x0000028fce3d2440, 0x0000028fce3d2cc0]
+Event: 7.256 Thread 0x0000028ff3242a00 nmethod 10430 0x0000028fce3d3410 code [0x0000028fce3d35e0, 0x0000028fce3d3ff8]
+Event: 7.258 Thread 0x0000028fe560d050 10436       3       jdk.internal.org.objectweb.asm.MethodWriter::visitInsn (115 bytes)
+Event: 7.258 Thread 0x0000028fe560d050 nmethod 10436 0x0000028fc76cac90 code [0x0000028fc76cae60, 0x0000028fc76cb270]
+
+GC Heap History (20 events):
+Event: 0.903 GC heap before
+{Heap before GC invocations=2 (full 0):
+ garbage-first heap   total 524288K, used 26616K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 7 young (28672K), 1 survivors (4096K)
+ Metaspace       used 21327K, committed 21504K, reserved 1114112K
+  class space    used 2349K, committed 2432K, reserved 1048576K
+}
+Event: 0.906 GC heap after
+{Heap after GC invocations=3 (full 0):
+ garbage-first heap   total 524288K, used 13548K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 2 young (8192K), 2 survivors (8192K)
+ Metaspace       used 21327K, committed 21504K, reserved 1114112K
+  class space    used 2349K, committed 2432K, reserved 1048576K
+}
+Event: 3.160 GC heap before
+{Heap before GC invocations=4 (full 0):
+ garbage-first heap   total 69632K, used 62700K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 15 young (61440K), 2 survivors (8192K)
+ Metaspace       used 33212K, committed 33472K, reserved 1114112K
+  class space    used 3214K, committed 3328K, reserved 1048576K
+}
+Event: 3.164 GC heap after
+{Heap after GC invocations=5 (full 0):
+ garbage-first heap   total 86016K, used 21162K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 4 young (16384K), 4 survivors (16384K)
+ Metaspace       used 33212K, committed 33472K, reserved 1114112K
+  class space    used 3214K, committed 3328K, reserved 1048576K
+}
+Event: 3.227 GC heap before
+{Heap before GC invocations=5 (full 0):
+ garbage-first heap   total 86016K, used 37546K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 9 young (36864K), 4 survivors (16384K)
+ Metaspace       used 35853K, committed 36096K, reserved 1114112K
+  class space    used 3607K, committed 3712K, reserved 1048576K
+}
+Event: 3.229 GC heap after
+{Heap after GC invocations=6 (full 0):
+ garbage-first heap   total 86016K, used 18201K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 1 young (4096K), 1 survivors (4096K)
+ Metaspace       used 35853K, committed 36096K, reserved 1114112K
+  class space    used 3607K, committed 3712K, reserved 1048576K
+}
+Event: 3.235 GC heap before
+{Heap before GC invocations=6 (full 0):
+ garbage-first heap   total 86016K, used 18201K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 2 young (8192K), 1 survivors (4096K)
+ Metaspace       used 36140K, committed 36416K, reserved 1114112K
+  class space    used 3637K, committed 3776K, reserved 1048576K
+}
+Event: 3.236 GC heap after
+{Heap after GC invocations=7 (full 0):
+ garbage-first heap   total 86016K, used 15143K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 1 young (4096K), 1 survivors (4096K)
+ Metaspace       used 36140K, committed 36416K, reserved 1114112K
+  class space    used 3637K, committed 3776K, reserved 1048576K
+}
+Event: 3.853 GC heap before
+{Heap before GC invocations=8 (full 0):
+ garbage-first heap   total 81920K, used 60199K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 12 young (49152K), 1 survivors (4096K)
+ Metaspace       used 41308K, committed 41728K, reserved 1114112K
+  class space    used 4284K, committed 4480K, reserved 1048576K
+}
+Event: 3.855 GC heap after
+{Heap after GC invocations=9 (full 0):
+ garbage-first heap   total 81920K, used 26292K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 2 young (8192K), 2 survivors (8192K)
+ Metaspace       used 41308K, committed 41728K, reserved 1114112K
+  class space    used 4284K, committed 4480K, reserved 1048576K
+}
+Event: 4.080 GC heap before
+{Heap before GC invocations=9 (full 0):
+ garbage-first heap   total 81920K, used 59060K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 10 young (40960K), 2 survivors (8192K)
+ Metaspace       used 46971K, committed 47552K, reserved 1114112K
+  class space    used 4991K, committed 5248K, reserved 1048576K
+}
+Event: 4.082 GC heap after
+{Heap after GC invocations=10 (full 0):
+ garbage-first heap   total 81920K, used 30840K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 1 young (4096K), 1 survivors (4096K)
+ Metaspace       used 46971K, committed 47552K, reserved 1114112K
+  class space    used 4991K, committed 5248K, reserved 1048576K
+}
+Event: 4.409 GC heap before
+{Heap before GC invocations=10 (full 0):
+ garbage-first heap   total 81920K, used 63608K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 9 young (36864K), 1 survivors (4096K)
+ Metaspace       used 51473K, committed 52096K, reserved 1114112K
+  class space    used 5475K, committed 5760K, reserved 1048576K
+}
+Event: 4.411 GC heap after
+{Heap after GC invocations=11 (full 0):
+ garbage-first heap   total 303104K, used 35689K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 2 young (8192K), 2 survivors (8192K)
+ Metaspace       used 51473K, committed 52096K, reserved 1114112K
+  class space    used 5475K, committed 5760K, reserved 1048576K
+}
+Event: 4.862 GC heap before
+{Heap before GC invocations=11 (full 0):
+ garbage-first heap   total 303104K, used 138089K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 29 young (118784K), 2 survivors (8192K)
+ Metaspace       used 60054K, committed 60928K, reserved 1114112K
+  class space    used 6161K, committed 6592K, reserved 1048576K
+}
+Event: 4.867 GC heap after
+{Heap after GC invocations=12 (full 0):
+ garbage-first heap   total 303104K, used 53977K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 6 young (24576K), 6 survivors (24576K)
+ Metaspace       used 60054K, committed 60928K, reserved 1114112K
+  class space    used 6161K, committed 6592K, reserved 1048576K
+}
+Event: 5.824 GC heap before
+{Heap before GC invocations=13 (full 0):
+ garbage-first heap   total 221184K, used 189145K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 40 young (163840K), 6 survivors (24576K)
+ Metaspace       used 69517K, committed 70528K, reserved 1114112K
+  class space    used 7326K, committed 7808K, reserved 1048576K
+}
+Event: 5.832 GC heap after
+{Heap after GC invocations=14 (full 0):
+ garbage-first heap   total 253952K, used 84989K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 5 young (20480K), 5 survivors (20480K)
+ Metaspace       used 69517K, committed 70528K, reserved 1114112K
+  class space    used 7326K, committed 7808K, reserved 1048576K
+}
+Event: 6.649 GC heap before
+{Heap before GC invocations=14 (full 0):
+ garbage-first heap   total 253952K, used 175101K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 28 young (114688K), 5 survivors (20480K)
+ Metaspace       used 72424K, committed 73536K, reserved 1114112K
+  class space    used 7920K, committed 8448K, reserved 1048576K
+}
+Event: 6.653 GC heap after
+{Heap after GC invocations=15 (full 0):
+ garbage-first heap   total 253952K, used 98168K [0x0000000602c00000, 0x0000000800000000)
+  region size 4096K, 4 young (16384K), 4 survivors (16384K)
+ Metaspace       used 72424K, committed 73536K, reserved 1114112K
+  class space    used 7920K, committed 8448K, reserved 1048576K
+}
+
+Dll operation events (20 events):
+Event: 0.157 Loaded shared library C:\Program Files\Java\jdk-20\bin\net.dll
+Event: 0.158 Loaded shared library C:\Program Files\Java\jdk-20\bin\nio.dll
+Event: 0.160 Loaded shared library C:\Program Files\Java\jdk-20\bin\zip.dll
+Event: 0.210 Loaded shared library C:\Program Files\Java\jdk-20\bin\jimage.dll
+Event: 0.245 Loaded shared library C:\Program Files\Java\jdk-20\bin\verify.dll
+Event: 0.502 Loaded shared library C:\Program Files\Java\jdk-20\bin\sunmscapi.dll
+Event: 0.603 Loaded shared library C:\Program Files\Java\jdk-20\bin\awt.dll
+Event: 0.769 Loaded shared library C:\Program Files\Java\jdk-20\bin\freetype.dll
+Event: 0.769 Loaded shared library C:\Program Files\Java\jdk-20\bin\fontmanager.dll
+Event: 0.817 Loaded shared library C:\Program Files\Java\jdk-20\bin\management.dll
+Event: 0.819 Loaded shared library C:\Program Files\Java\jdk-20\bin\management_ext.dll
+Event: 0.835 Loaded shared library C:\Program Files\Java\jdk-20\bin\extnet.dll
+Event: 3.325 Loaded shared library C:\Users\sully\AppData\Local\Temp\jna-109797719\jna12557326233972642560.dll
+Event: 4.228 Loaded shared library C:\Program Files\Java\jdk-20\bin\mlib_image.dll
+Event: 4.932 Loaded shared library C:\Program Files\Java\jdk-20\bin\jsound.dll
+Event: 4.999 Loaded shared library C:\Program Files\Java\jdk-20\bin\javajpeg.dll
+Event: 6.584 Loaded shared library C:\Program Files\Java\jdk-20\bin\jawt.dll
+Event: 6.590 Loaded shared library C:\Users\sully\AppData\Local\Temp\3407223594786309774rlawt.dll
+Event: 7.249 Loaded shared library C:\Users\sully\AppData\Local\Temp\lwjgl-rl-amd64\3.3.1-build-7\lwjgl.dll
+Event: 7.251 Loaded shared library C:\Users\sully\AppData\Local\Temp\lwjgl-rl-amd64\3.3.1-build-7\lwjgl_opengl.dll
+
+Deoptimization events (20 events):
+Event: 7.244 Thread 0x0000028feabb7070 Uncommon trap: trap_request=0xffffff45 fr.pc=0x0000028fce366870 relative=0x0000000000001890
+Event: 7.244 Thread 0x0000028feabb7070 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000028fce366870 method=java.awt.EventQueue.eventToCacheIndex(Ljava/awt/AWTEvent;)I @ 4 c2
+Event: 7.244 Thread 0x0000028feabb7070 DEOPT PACKING pc=0x0000028fce366870 sp=0x000000e6a15ff110
+Event: 7.244 Thread 0x0000028feabb7070 DEOPT UNPACKING pc=0x0000028fcd489d22 sp=0x000000e6a15fef78 mode 2
+Event: 7.244 Thread 0x0000028feabb7070 Uncommon trap: trap_request=0xffffff45 fr.pc=0x0000028fce362670 relative=0x0000000000001470
+Event: 7.244 Thread 0x0000028feabb7070 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000028fce362670 method=java.awt.EventQueue.eventToCacheIndex(Ljava/awt/AWTEvent;)I @ 4 c2
+Event: 7.244 Thread 0x0000028feabb7070 DEOPT PACKING pc=0x0000028fce362670 sp=0x000000e6a15ff0c0
+Event: 7.244 Thread 0x0000028feabb7070 DEOPT UNPACKING pc=0x0000028fcd489d22 sp=0x000000e6a15fef80 mode 2
+Event: 7.244 Thread 0x0000028feabb7070 Uncommon trap: trap_request=0xffffff45 fr.pc=0x0000028fce2d686c relative=0x000000000000034c
+Event: 7.244 Thread 0x0000028feabb7070 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000028fce2d686c method=java.awt.EventQueue.eventToCacheIndex(Ljava/awt/AWTEvent;)I @ 4 c2
+Event: 7.244 Thread 0x0000028feabb7070 DEOPT PACKING pc=0x0000028fce2d686c sp=0x000000e6a15ff080
+Event: 7.244 Thread 0x0000028feabb7070 DEOPT UNPACKING pc=0x0000028fcd489d22 sp=0x000000e6a15fef78 mode 2
+Event: 7.245 Thread 0x0000028feabb7070 Uncommon trap: trap_request=0xffffff45 fr.pc=0x0000028fce291078 relative=0x00000000000000f8
+Event: 7.245 Thread 0x0000028feabb7070 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000028fce291078 method=java.awt.EventQueue.eventToCacheIndex(Ljava/awt/AWTEvent;)I @ 4 c2
+Event: 7.245 Thread 0x0000028feabb7070 DEOPT PACKING pc=0x0000028fce291078 sp=0x000000e6a15ff020
+Event: 7.245 Thread 0x0000028feabb7070 DEOPT UNPACKING pc=0x0000028fcd489d22 sp=0x000000e6a15fef80 mode 2
+Event: 7.247 Thread 0x0000028ff2325b30 Uncommon trap: trap_request=0xffffff45 fr.pc=0x0000028fcdc91878 relative=0x0000000000000358
+Event: 7.247 Thread 0x0000028ff2325b30 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000028fcdc91878 method=java.util.jar.JarFile.match([B[B[B[B)I @ 29 c2
+Event: 7.247 Thread 0x0000028ff2325b30 DEOPT PACKING pc=0x0000028fcdc91878 sp=0x000000e6a2a9d130
+Event: 7.247 Thread 0x0000028ff2325b30 DEOPT UNPACKING pc=0x0000028fcd489d22 sp=0x000000e6a2a9d0b8 mode 2
+
+Classes loaded (20 events):
+Event: 7.248 Loading class java/nio/file/NoSuchFileException
+Event: 7.248 Loading class java/nio/file/NoSuchFileException done
+Event: 7.254 Loading class java/nio/BufferOverflowException
+Event: 7.254 Loading class java/nio/BufferOverflowException done
+Event: 7.254 Loading class java/lang/ThreadLocal$SuppliedThreadLocal
+Event: 7.254 Loading class java/lang/ThreadLocal$SuppliedThreadLocal done
+Event: 7.254 Loading class java/nio/DirectShortBufferU
+Event: 7.254 Loading class java/nio/DirectShortBufferU done
+Event: 7.256 Loading class java/nio/DirectCharBufferU
+Event: 7.256 Loading class java/nio/DirectCharBufferU done
+Event: 7.256 Loading class java/nio/DirectFloatBufferU
+Event: 7.256 Loading class java/nio/DirectFloatBufferU done
+Event: 7.256 Loading class java/nio/DirectDoubleBufferU
+Event: 7.256 Loading class java/nio/DirectDoubleBufferU done
+Event: 7.256 Loading class java/util/function/LongPredicate
+Event: 7.257 Loading class java/util/function/LongPredicate done
+Event: 7.258 Loading class java/nio/InvalidMarkException
+Event: 7.258 Loading class java/nio/InvalidMarkException done
+Event: 7.258 Loading class java/nio/BufferUnderflowException
+Event: 7.258 Loading class java/nio/BufferUnderflowException done
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (20 events):
+Event: 6.664 Thread 0x0000028ff2325b30 Implicit null exception at 0x0000028fcdd60e83 to 0x0000028fcdd6152c
+Event: 6.675 Thread 0x0000028feabb7070 Exception <a 'java/lang/NoSuchMethodError'{0x0000000621240e00}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, int)'> (0x0000000621240e00) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 7.074 Thread 0x0000028ff89ead60 Implicit null exception at 0x0000028fce081ba0 to 0x0000028fce081f94
+Event: 7.074 Thread 0x0000028ff89ead60 Implicit null exception at 0x0000028fce1542d0 to 0x0000028fce1544a0
+Event: 7.236 Thread 0x0000028ff2325b30 Implicit null exception at 0x0000028fcdc86f06 to 0x0000028fcdc87400
+Event: 7.236 Thread 0x0000028ff2325b30 Implicit null exception at 0x0000028fcde68150 to 0x0000028fcde69d78
+Event: 7.236 Thread 0x0000028ff2325b30 Implicit null exception at 0x0000028fcde5ebde to 0x0000028fcde5f49c
+Event: 7.236 Thread 0x0000028ff2325b30 Exception <a 'java/lang/NoSuchMethodError'{0x000000060c2d5f60}: 'void java.lang.System.load(java.lang.String, java.lang.Class)'> (0x000000060c2d5f60) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 7.239 Thread 0x0000028ff2325b30 Exception <a 'java/lang/NoSuchMethodError'{0x000000060c2f2438}: 'void java.lang.System.loadLibrary(java.lang.String, java.lang.Class)'> (0x000000060c2f2438) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 7.242 Thread 0x0000028ff2325b30 Exception <a 'java/lang/NoSuchMethodError'{0x000000060bcd3de8}: 'void java.lang.System.load(java.lang.String, java.lang.Class)'> (0x000000060bcd3de8) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 7.243 Thread 0x0000028ff2325b30 Exception <a 'java/lang/NoSuchMethodError'{0x000000060bcd6cc8}: 'void java.lang.System.loadLibrary(java.lang.String, java.lang.Class)'> (0x000000060bcd6cc8) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 7.248 Thread 0x0000028ff2325b30 Exception <a 'sun/nio/fs/WindowsException'{0x000000060bdb86b0}> (0x000000060bdb86b0) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 519]
+Event: 7.248 Thread 0x0000028ff2325b30 Exception <a 'sun/nio/fs/WindowsException'{0x000000060bdb8a10}> (0x000000060bdb8a10) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 519]
+Event: 7.250 Thread 0x0000028ff2325b30 Exception <a 'sun/nio/fs/WindowsException'{0x000000060bdc7d50}> (0x000000060bdc7d50) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 519]
+Event: 7.250 Thread 0x0000028ff2325b30 Exception <a 'sun/nio/fs/WindowsException'{0x000000060bdc8110}> (0x000000060bdc8110) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 519]
+Event: 7.251 Thread 0x0000028ff2325b30 Exception <a 'sun/nio/fs/WindowsException'{0x000000060bdcd298}> (0x000000060bdcd298) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 519]
+Event: 7.251 Thread 0x0000028ff2325b30 Exception <a 'sun/nio/fs/WindowsException'{0x000000060bdcd590}> (0x000000060bdcd590) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 519]
+Event: 7.257 Thread 0x0000028ff2325b30 Exception <a 'java/lang/NoSuchMethodError'{0x000000060be157d0}: 'int java.lang.invoke.DirectMethodHandle$Holder.invokeStaticInit(java.lang.Object, java.lang.Object, int, long)'> (0x000000060be157d0) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 7.257 Thread 0x0000028ff2325b30 Exception <a 'java/lang/NoSuchMethodError'{0x000000060be25c60}: 'int java.lang.invoke.DirectMethodHandle$Holder.invokeStaticInit(java.lang.Object, java.lang.Object, long, long)'> (0x000000060be25c60) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 7.257 Thread 0x0000028ff2325b30 Exception <a 'java/lang/NoSuchMethodError'{0x000000060be2f708}: 'int java.lang.invoke.DirectMethodHandle$Holder.invokeStaticInit(java.lang.Object, java.lang.Object, java.lang.Object, long)'> (0x000000060be2f708) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+
+VM Operations (20 events):
+Event: 6.945 Executing VM operation: HandshakeAllThreads
+Event: 6.945 Executing VM operation: HandshakeAllThreads done
+Event: 6.949 Executing VM operation: HandshakeAllThreads
+Event: 6.949 Executing VM operation: HandshakeAllThreads done
+Event: 6.952 Executing VM operation: HandshakeAllThreads
+Event: 6.952 Executing VM operation: HandshakeAllThreads done
+Event: 6.964 Executing VM operation: ICBufferFull
+Event: 6.964 Executing VM operation: ICBufferFull done
+Event: 7.050 Executing VM operation: ChangeBreakpoints
+Event: 7.052 Executing VM operation: ChangeBreakpoints done
+Event: 7.123 Executing VM operation: ICBufferFull
+Event: 7.123 Executing VM operation: ICBufferFull done
+Event: 7.185 Executing VM operation: HandshakeAllThreads
+Event: 7.185 Executing VM operation: HandshakeAllThreads done
+Event: 7.239 Executing VM operation: ICBufferFull
+Event: 7.239 Executing VM operation: ICBufferFull done
+Event: 7.255 Executing VM operation: HandshakeAllThreads
+Event: 7.255 Executing VM operation: HandshakeAllThreads done
+Event: 7.256 Executing VM operation: HandshakeAllThreads
+Event: 7.256 Executing VM operation: HandshakeAllThreads done
+
+Events (20 events):
+Event: 4.873 Thread 0x0000028fbc7b96b0 flushing nmethod 0x0000028fcdd13090
+Event: 4.873 Thread 0x0000028fbc7b96b0 flushing nmethod 0x0000028fcdceed90
+Event: 4.873 Thread 0x0000028fbc7b96b0 flushing nmethod 0x0000028fcdcee590
+Event: 4.873 Thread 0x0000028fbc7b96b0 flushing nmethod 0x0000028fcdcf4b90
+Event: 4.873 Thread 0x0000028fbc7b96b0 flushing nmethod 0x0000028fcdcb0e90
+Event: 4.873 Thread 0x0000028fbc7b96b0 flushing nmethod 0x0000028fcdc6ad90
+Event: 4.873 Thread 0x0000028fbc7b96b0 flushing nmethod 0x0000028fcdc6ee90
+Event: 4.873 Thread 0x0000028fbc7b96b0 flushing nmethod 0x0000028fcdc40f10
+Event: 4.873 Thread 0x0000028fbc7b96b0 flushing nmethod 0x0000028fcdc2a110
+Event: 4.873 Thread 0x0000028fbc7b96b0 flushing nmethod 0x0000028fcdc3cb10
+Event: 4.953 Thread 0x0000028ff46fe520 Thread added: 0x0000028ff46fe520
+Event: 4.961 Thread 0x0000028ff46f9ac0 Thread added: 0x0000028ff46f9ac0
+Event: 5.133 Thread 0x0000028ff46f8030 Thread added: 0x0000028ff46f8030
+Event: 5.219 Thread 0x0000028ff46f8ad0 Thread added: 0x0000028ff46f8ad0
+Event: 5.331 Thread 0x0000028ff46fb000 Thread added: 0x0000028ff46fb000
+Event: 5.427 Thread 0x0000028ff46fb550 Thread added: 0x0000028ff46fb550
+Event: 5.695 Thread 0x0000028ff46fd530 Thread added: 0x0000028ff46fd530
+Event: 5.697 Thread 0x0000028ff89e8830 Thread added: 0x0000028ff89e8830
+Event: 7.074 Thread 0x0000028fbc793410 Thread exited: 0x0000028fbc793410
+Event: 7.074 Thread 0x0000028ff89ead60 Thread added: 0x0000028ff89ead60
+
+
+Dynamic libraries:
+0x00007ff6240e0000 - 0x00007ff6240f0000 	C:\Program Files\Java\jdk-20\bin\java.exe
+0x00007ff93be50000 - 0x00007ff93c064000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff93a830000 - 0x00007ff93a8f2000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff939490000 - 0x00007ff939833000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff939a70000 - 0x00007ff939b81000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff924260000 - 0x00007ff92427b000 	C:\Program Files\Java\jdk-20\bin\VCRUNTIME140.dll
+0x00007ff921e60000 - 0x00007ff921e79000 	C:\Program Files\Java\jdk-20\bin\jli.dll
+0x00007ff93a5f0000 - 0x00007ff93a69e000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff939df0000 - 0x00007ff939e97000 	C:\Windows\System32\msvcrt.dll
+0x00007ff93a900000 - 0x00007ff93a9a4000 	C:\Windows\System32\sechost.dll
+0x00007ff93a140000 - 0x00007ff93a257000 	C:\Windows\System32\RPCRT4.dll
+0x00007ff93bc60000 - 0x00007ff93be0b000 	C:\Windows\System32\USER32.dll
+0x00007ff9392c0000 - 0x00007ff9392e6000 	C:\Windows\System32\win32u.dll
+0x00007ff924ef0000 - 0x00007ff92517e000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.1635_none_270f70857386168e\COMCTL32.dll
+0x00007ff939fb0000 - 0x00007ff939fd9000 	C:\Windows\System32\GDI32.dll
+0x00007ff9392f0000 - 0x00007ff939409000 	C:\Windows\System32\gdi32full.dll
+0x00007ff939b90000 - 0x00007ff939c2a000 	C:\Windows\System32\msvcp_win.dll
+0x00007ff931b80000 - 0x00007ff931b8a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff93af30000 - 0x00007ff93af61000 	C:\Windows\System32\IMM32.DLL
+0x00007ff9268b0000 - 0x00007ff9268bc000 	C:\Program Files\Java\jdk-20\bin\vcruntime140_1.dll
+0x00007ff8fa1d0000 - 0x00007ff8fa25e000 	C:\Program Files\Java\jdk-20\bin\msvcp140.dll
+0x00007ff883680000 - 0x00007ff884317000 	C:\Program Files\Java\jdk-20\bin\server\jvm.dll
+0x00007ff921e80000 - 0x00007ff921e89000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ff9322f0000 - 0x00007ff932324000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff93ad10000 - 0x00007ff93ad81000 	C:\Windows\System32\WS2_32.dll
+0x00007ff9382c0000 - 0x00007ff9382d8000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ff921d60000 - 0x00007ff921d6a000 	C:\Program Files\Java\jdk-20\bin\jimage.dll
+0x00007ff9257a0000 - 0x00007ff9259ce000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ff93a260000 - 0x00007ff93a5e9000 	C:\Windows\System32\combase.dll
+0x00007ff93a740000 - 0x00007ff93a817000 	C:\Windows\System32\OLEAUT32.dll
+0x00007ff91c1a0000 - 0x00007ff91c1d2000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ff939410000 - 0x00007ff93948b000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ff903a60000 - 0x00007ff903a9c000 	C:\Program Files\Java\jdk-20\bin\jdwp.dll
+0x00007ff901460000 - 0x00007ff901486000 	C:\Program Files\Java\jdk-20\bin\java.dll
+0x00007ff8f1c40000 - 0x00007ff8f1d17000 	C:\Program Files\Java\jdk-20\bin\jsvml.dll
+0x00007ff93af70000 - 0x00007ff93b76a000 	C:\Windows\System32\SHELL32.dll
+0x00007ff937200000 - 0x00007ff937ace000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x00007ff9370c0000 - 0x00007ff9371fe000 	C:\Windows\SYSTEM32\wintypes.dll
+0x00007ff93a040000 - 0x00007ff93a131000 	C:\Windows\System32\SHCORE.dll
+0x00007ff939fe0000 - 0x00007ff93a03e000 	C:\Windows\System32\shlwapi.dll
+0x00007ff939180000 - 0x00007ff9391a1000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007ff90e130000 - 0x00007ff90e13c000 	C:\Program Files\Java\jdk-20\bin\dt_socket.dll
+0x00007ff937d30000 - 0x00007ff937d5d000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x00007ff9387b0000 - 0x00007ff938819000 	C:\Windows\system32\mswsock.dll
+0x00007ff903af0000 - 0x00007ff903b03000 	C:\Program Files\Java\jdk-20\bin\net.dll
+0x00007ff932980000 - 0x00007ff932ab7000 	C:\Windows\SYSTEM32\WINHTTP.dll
+0x00007ff902e50000 - 0x00007ff902e66000 	C:\Program Files\Java\jdk-20\bin\nio.dll
+0x00007ff8fbee0000 - 0x00007ff8fbef8000 	C:\Program Files\Java\jdk-20\bin\zip.dll
+0x00007ff8fbed0000 - 0x00007ff8fbee0000 	C:\Program Files\Java\jdk-20\bin\verify.dll
+0x00007ff8fbec0000 - 0x00007ff8fbece000 	C:\Program Files\Java\jdk-20\bin\sunmscapi.dll
+0x00007ff939840000 - 0x00007ff9399a7000 	C:\Windows\System32\CRYPT32.dll
+0x00007ff938bd0000 - 0x00007ff938bfe000 	C:\Windows\SYSTEM32\ncrypt.dll
+0x00007ff938b90000 - 0x00007ff938bc7000 	C:\Windows\SYSTEM32\NTASN1.dll
+0x00007ff938ef0000 - 0x00007ff938f02000 	C:\Windows\SYSTEM32\MSASN1.dll
+0x00007ff938ad0000 - 0x00007ff938aeb000 	C:\Windows\SYSTEM32\CRYPTSP.dll
+0x00007ff9382e0000 - 0x00007ff938315000 	C:\Windows\system32\rsaenh.dll
+0x00007ff938ab0000 - 0x00007ff938abc000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x00007ff938820000 - 0x00007ff938846000 	C:\Windows\SYSTEM32\gpapi.dll
+0x00007ff938c00000 - 0x00007ff938c28000 	C:\Windows\SYSTEM32\bcrypt.dll
+0x00007ff938850000 - 0x00007ff938878000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007ff93bbf0000 - 0x00007ff93bbf9000 	C:\Windows\System32\NSI.dll
+0x00007ff932960000 - 0x00007ff932979000 	C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x00007ff9328f0000 - 0x00007ff93290f000 	C:\Windows\SYSTEM32\dhcpcsvc.DLL
+0x00007ff937da0000 - 0x00007ff937e93000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x00007ff8efcc0000 - 0x00007ff8efe51000 	C:\Program Files\Java\jdk-20\bin\awt.dll
+0x00007ff936620000 - 0x00007ff9366b7000 	C:\Windows\SYSTEM32\apphelp.dll
+0x00007ff9367d0000 - 0x00007ff93687b000 	C:\Windows\system32\uxtheme.dll
+0x00007ff93aa50000 - 0x00007ff93ab77000 	C:\Windows\System32\MSCTF.dll
+0x00007ff93ad90000 - 0x00007ff93af2c000 	C:\Windows\System32\ole32.dll
+0x00007ff936b50000 - 0x00007ff936b7b000 	C:\Windows\system32\DWMAPI.DLL
+0x00007ff8952e0000 - 0x00007ff8953e0000 	C:\Windows\system32\opengl32.dll
+0x00007ff8952b0000 - 0x00007ff8952dd000 	C:\Windows\SYSTEM32\GLU32.dll
+0x00007ff936910000 - 0x00007ff936948000 	C:\Windows\SYSTEM32\dxcore.dll
+0x00007ff91f760000 - 0x00007ff91f909000 	C:\Windows\system32\d3d9.dll
+0x00007ff92dd80000 - 0x00007ff92de3c000 	C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_3c2bd4a1ec6d228e\nvldumdx.dll
+0x00007ff931b20000 - 0x00007ff931b52000 	C:\Windows\SYSTEM32\cryptnet.dll
+0x00007ff9308c0000 - 0x00007ff930a20000 	C:\Windows\SYSTEM32\drvstore.dll
+0x00007ff938f10000 - 0x00007ff938f3c000 	C:\Windows\SYSTEM32\devobj.dll
+0x00007ff938f40000 - 0x00007ff938f8e000 	C:\Windows\SYSTEM32\CFGMGR32.dll
+0x00007ff938a30000 - 0x00007ff938a78000 	C:\Windows\SYSTEM32\wldp.dll
+0x00007ff939250000 - 0x00007ff9392bb000 	C:\Windows\System32\wintrust.dll
+0x00007ff93a9b0000 - 0x00007ff93a9cf000 	C:\Windows\System32\imagehlp.dll
+0x00007ff8d6000000 - 0x00007ff8d9189000 	C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_3c2bd4a1ec6d228e\nvd3dumx.dll
+0x00007ff932910000 - 0x00007ff932958000 	C:\Windows\SYSTEM32\directxdatabasehelper.dll
+0x00007ff8d5370000 - 0x00007ff8d5641000 	C:\Windows\system32\nvspcap64.dll
+0x00007ff938370000 - 0x00007ff9383a4000 	C:\Windows\SYSTEM32\ntmarta.dll
+0x00007ff8f81e0000 - 0x00007ff8f8266000 	C:\Program Files\Java\jdk-20\bin\freetype.dll
+0x00007ff8ee5a0000 - 0x00007ff8ee666000 	C:\Program Files\Java\jdk-20\bin\fontmanager.dll
+0x00007ff91c2a0000 - 0x00007ff91c3cd000 	C:\Windows\SYSTEM32\textinputframework.dll
+0x00007ff8fbeb0000 - 0x00007ff8fbeba000 	C:\Program Files\Java\jdk-20\bin\management.dll
+0x00007ff8fbea0000 - 0x00007ff8fbeab000 	C:\Program Files\Java\jdk-20\bin\management_ext.dll
+0x00007ff939fa0000 - 0x00007ff939fa8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ff936230000 - 0x00007ff936363000 	C:\Windows\SYSTEM32\CoreMessaging.dll
+0x00007ff931550000 - 0x00007ff9318bc000 	C:\Windows\SYSTEM32\CoreUIComponents.dll
+0x00007ff930430000 - 0x00007ff93043a000 	C:\Windows\System32\rasadhlp.dll
+0x00007ff931c10000 - 0x00007ff931c94000 	C:\Windows\System32\fwpuclnt.dll
+0x00007ff8fbe90000 - 0x00007ff8fbe97000 	C:\Program Files\Java\jdk-20\bin\extnet.dll
+0x00007ff8efc70000 - 0x00007ff8efcb4000 	C:\Users\sully\AppData\Local\Temp\jna-109797719\jna12557326233972642560.dll
+0x00007ff8ee170000 - 0x00007ff8ee20c000 	C:\Users\sully\AppData\Local\Temp\jna-109797719\jna2355063742645890209.dll
+0x00007ff8ee420000 - 0x00007ff8ee49f000 	C:\Program Files\Java\jdk-20\bin\mlib_image.dll
+0x00007ff8fbc00000 - 0x00007ff8fbc12000 	C:\Program Files\Java\jdk-20\bin\jsound.dll
+0x00007ff927b90000 - 0x00007ff927c32000 	C:\Windows\SYSTEM32\DSOUND.dll
+0x00007ff926a00000 - 0x00007ff926ab1000 	C:\Windows\SYSTEM32\ResampleDmo.DLL
+0x00007ff938120000 - 0x00007ff93816d000 	C:\Windows\SYSTEM32\powrprof.dll
+0x00007ff8fbe60000 - 0x00007ff8fbe89000 	C:\Windows\SYSTEM32\winmmbase.dll
+0x00007ff933b20000 - 0x00007ff933b2b000 	C:\Windows\SYSTEM32\msdmo.dll
+0x00007ff938100000 - 0x00007ff938113000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ff939ea0000 - 0x00007ff939f50000 	C:\Windows\System32\clbcatq.dll
+0x00007ff926f10000 - 0x00007ff926fad000 	C:\Windows\System32\MMDevApi.dll
+0x00007ff8fbe10000 - 0x00007ff8fbe56000 	C:\Windows\SYSTEM32\wdmaud.drv
+0x00007ff932c10000 - 0x00007ff932c1b000 	C:\Windows\SYSTEM32\AVRT.dll
+0x00007ff925430000 - 0x00007ff925439000 	C:\Windows\SYSTEM32\ksuser.dll
+0x00007ff923eb0000 - 0x00007ff92409c000 	C:\Windows\SYSTEM32\AUDIOSES.DLL
+0x00007ff9230c0000 - 0x00007ff9230ce000 	C:\Windows\SYSTEM32\msacm32.drv
+0x00007ff91c1f0000 - 0x00007ff91c20e000 	C:\Windows\SYSTEM32\MSACM32.dll
+0x00007ff922fc0000 - 0x00007ff922fcb000 	C:\Windows\SYSTEM32\midimap.dll
+0x00007ff936cc0000 - 0x00007ff936cd5000 	C:\Windows\SYSTEM32\resourcepolicyclient.dll
+0x00007ff923540000 - 0x00007ff9236b4000 	C:\Windows\System32\Windows.UI.dll
+0x00007ff8f9670000 - 0x00007ff8f969e000 	C:\Program Files\Java\jdk-20\bin\javajpeg.dll
+0x00007ff9367c0000 - 0x00007ff9367cd000 	C:\Windows\SYSTEM32\WINNSI.DLL
+0x00007ff8f8ee0000 - 0x00007ff8f8ee7000 	C:\Program Files\Java\jdk-20\bin\jawt.dll
+0x00007ff8f85c0000 - 0x00007ff8f85e7000 	C:\Users\sully\AppData\Local\Temp\3407223594786309774rlawt.dll
+0x00007ff934ae0000 - 0x00007ff934c90000 	C:\Windows\SYSTEM32\WindowsCodecs.dll
+0x00007ff921870000 - 0x00007ff9218ce000 	C:\Windows\system32\dataexchange.dll
+0x00007ff92f470000 - 0x00007ff92f6de000 	C:\Windows\system32\twinapi.appcore.dll
+0x00007ff931d90000 - 0x00007ff931ec4000 	C:\Windows\System32\AppXDeploymentClient.dll
+0x00007ff874e40000 - 0x00007ff8790c9000 	C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_3c2bd4a1ec6d228e\nvoglv64.dll
+0x00007ff93b770000 - 0x00007ff93bbe4000 	C:\Windows\System32\SETUPAPI.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-20\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.1635_none_270f70857386168e;C:\Program Files\Java\jdk-20\bin\server;C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_3c2bd4a1ec6d228e;C:\Users\sully\AppData\Local\Temp\jna-109797719;C:\Users\sully\AppData\Local\Temp;C:\Users\sully\AppData\Local\Temp\lwjgl-rl-amd64\3.3.1-build-7
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=127.0.0.1:53268 -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant -ea 
+java_command: com.iSully.TagGame.TagGamePluginTest
+java_class_path (initial): C:\Users\sully\OneDrive\Desktop\Runelite Plugins\Secret Agent\build\classes\java\test;C:\Users\sully\OneDrive\Desktop\Runelite Plugins\Secret Agent\build\resources\test;C:\Users\sully\OneDrive\Desktop\Runelite Plugins\Secret Agent\build\classes\java\main;C:\Users\sully\OneDrive\Desktop\Runelite Plugins\Secret Agent\build\resources\main;C:\Users\sully\.gradle\caches\modules-2\files-2.1\io.socket\socket.io-client\2.1.0\d49d37d8c62bddec4d7d0a65add9859fab666d0e\socket.io-client-2.1.0.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite\client\1.10.5\7bf9c54a7cd8125d9159b5d0a34a1dcde927779c\client-1.10.5.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite.arn\http-api\1.2.6\1d0fae717906ae03d374e57066e1c7c7512b2fbd\http-api-1.2.6.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.9\8a432c1d6825781e21a02db2e2c33c5fde2833b9\gson-2.8.9.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite\jshell\1.10.5\93403c3e34c0fb6afeeff6bc68e2bb5a55966e08\jshell-1.10.5.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\io.socket\engine.io-client\2.1.0\fb421e5575e69e1181e5fed3eea351929017f08e\engine.io-client-2.1.0.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.2.9\7d495522b08a9a66084bf417e70eedf95ef706bc\logback-classic-1.2.9.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite\runelite-api\1.10.5\ad2fd88a364034738b07d96e43aca33f525cc426\runelite-api-1.10.5.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.32\cdcff33940d9f2de763bc41ea05a0be5941176c3\slf4j-api-1.7.32.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.sf.jopt-simple\jopt-simple\5.0.1\20f7d76f9d06033d68f1b8e58666e7c542e91f08\jopt-simple-5.0.1.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.google.inject\guice\4.1.0\faf9ee8ac09eafd1128091426dd367a8c0085d55\guice-4.1.0-no_aop.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\23.2-jre\a1a3e54263d357d2ecadcb3f5e7eb6464c66fe93\guava-23.2-jre.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite.pushingpixels\substance\8.0.02\7af2c3e2156d193c279d1989a09e59fd728b3341\substance-8.0.02.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite.pushingpixels\trident\1.5.00\e8e2efc9ae40ede3f19f4f78ab768125abdd1378\trident-1.5.00.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-text\1.2\74acdec7237f576c4803fff0c1008ab8a3808b2b\commons-text-1.2.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite.archive-patcher\archive-patcher-applier\1.2\2cde7c29b5d93401161b3512e250c7115c983f98\archive-patcher-applier-1.2.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna-platform\5.9.0\c535a5bda553d7d7690356c825010da74b2671b5\jna-platform-5.9.0.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite\discord\1.4\5e3d040c8c8922d3e8cb900f532d7c08a748d687\discord-1.4.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna\5.9.0\8f503e6d9b500ceff299052d6be75b38c7257758\jna-5.9.0.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.google.protobuf\protobuf-javalite\3.21.12\e450dd89f2b4f79af08a9cb8ccbe62b25b1e7be8\protobuf-javalite-3.21.12.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite\rlawt\1.3\642718d730ccab64eb0ae195de2985e61d52f116\rlawt-1.3.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite.jocl\jocl\1.0\6794c67e573be36cdc2a3be131e21520b9964f07\jocl-1.0.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite.jocl\jocl\1.0\aed02fd5a48f1aa99f2e6c2f4fc9480862426b95\jocl-1.0-macos-x64.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite.jocl\jocl\1.0\9a471ed096af4c8a618ec1654615c1c9cabcab56\jocl-1.0-macos-arm64.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\831a5533a21a5f4f81bbc51bb13e9899319b5411\lwjgl-opengl-3.3.1.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\ab9ab6fde3743e3550fa5d46d785ecb45b047d99\lwjgl-opengl-3.3.1-natives-linux.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\a0d12697ea019a7362eff26475b0531340e876a6\lwjgl-opengl-3.3.1-natives-macos.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\eafe34b871d966292e8db0f1f3d6b8b110d4e91d\lwjgl-opengl-3.3.1-natives-macos-arm64.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\deef3eb9b178ff2ff3ce893cc72ae741c3a17974\lwjgl-opengl-3.3.1-natives-windows-x86.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\c1807e9bd571402787d7e37e3029776ae2513bb8\lwjgl-opengl-3.3.1-natives-windows.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\ae58664f88e18a9bb2c77b063833ca7aaec484cb\lwjgl-3.3.1.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\1de885aba434f934201b99f2f1afb142036ac189\lwjgl-3.3.1-natives-linux.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\fc6bb723dec2cd031557dccb2a95f0ab80acb9db\lwjgl-3.3.1-natives-macos.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\71d0d5e469c9c95351eb949064497e3391616ac9\lwjgl-3.3.1-natives-macos-arm64.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\3b14f4beae9dd39791ec9e12190a9380cd8a3ce6\lwjgl-3.3.1-natives-windows-x86.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\36c37f16ab611b3aa11f3bcf80b1d509b4ce6b\lwjgl-3.3.1-natives-windows.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\net.runelite\client-patch\1.10.5\7f9a602db3e90978d0e20b75a079e274bdfdd67c\client-patch-1.10.5.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.fifesoft\autocomplete\3.1.1\462acc825af76747e8a90642d23150024cb9fd87\autocomplete-3.1.1.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.fifesoft\rsyntaxtextarea\3.1.2\d7b4588faf4e7abf5455b0b40e71a5a20249ac73\rsyntaxtextarea-3.1.2.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.14.9\3e6d101343c7ea687cd593e4990f73b25c878383\okhttp-3.14.9.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.2.9\cdaca0cf922c5791a8efa0063ec714ca974affe3\logback-core-1.2.9.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\aopalliance\aopalliance\1.0\235ba8b489512805ac13a8f9ea77a1ca5ebe3e8\aopalliance-1.0.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.7\557edd918fd41f9260963583ebf5a61a43a6b423\commons-lang3-3.7.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.0.18\5f65affce1684999e2f4024983835efc3504012e\error_prone_annotations-2.0.18.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\1.1\ed28ded51a8b1c6b112568def5f4b455e6809019\j2objc-annotations-1.1.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\org.codehaus.mojo\animal-sniffer-annotations\1.14\775b7e22fb10026eed3f86e8dc556dfafe35f2d5\animal-sniffer-annotations-1.14.jar;C:\Users\sully\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.17.2\78c7820b205002da4d2d137f6f312bd64b3d6049\okio-1.17.2.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 15                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 6                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 23                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 4194304                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 536870912                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 8543797248                                {product} {ergonomic}
+   size_t MaxNewSize                               = 5125439488                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 4194304                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 8192380                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 121732930                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 121732930                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 8543797248                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\sully\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\sully\AppData\Local\Programs\Python\Python311\;C:\Users\sully\AppData\Local\Microsoft\WindowsApps;C:\Users\sully\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\sully\AppData\Roaming\npm
+USERNAME=sully
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 183 Stepping 1, GenuineIntel
+TMP=C:\Users\sully\AppData\Local\Temp
+TEMP=C:\Users\sully\AppData\Local\Temp
+
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.1778)
+OS uptime: 3 days 14:25 hours
+Hyper-V role detected
+
+CPU: total 32 (initial active 32) (16 cores per cpu, 2 threads per core) family 6 model 183 stepping 1 microcode 0x10e, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, hv, serialize, rdtscp, rdpid, fsrm, f16c, cet_ibt, cet_ss
+
+Memory: 4k page, system-wide physical 32580M (17914M free)
+TotalPageFile size 37444M (AvailPageFile size 17124M)
+current process WorkingSet (physical memory assigned to process): 605M, peak: 605M
+current process commit charge ("private bytes"): 713M, peak: 733M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.0.1+9-29) for windows-amd64 JRE (20.0.1+9-29), built on 2023-03-07T13:56:11Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.
