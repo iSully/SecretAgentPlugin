@@ -6,6 +6,7 @@ public class GamePlayer {
     private String currentGameMode;
     private String partyCode;
     private String status;
+    private boolean playerTagged;
     private String activeTile;
 
     // Constructor
@@ -65,5 +66,13 @@ public class GamePlayer {
 
     public void setActiveTile(String activeTile) {
         this.activeTile = activeTile;
+    }
+
+    public boolean isPlayerTagged() {
+        return playerTagged;
+    }
+
+    public void setPlayerTagged(boolean playerTagged) {
+        this.playerTagged = playerTagged;
     }
 }

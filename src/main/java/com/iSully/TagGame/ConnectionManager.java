@@ -18,6 +18,9 @@ import java.nio.charset.StandardCharsets;
 @Slf4j
 @Singleton
 public class ConnectionManager {
+
+    public PartyGame partyGame;
+    public GamePlayer gamePlayer;
     private final String apiUrlBase = "http://localhost:4001";  // TODO: Change this
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
@@ -76,14 +79,13 @@ public class ConnectionManager {
     protected void createNewGame(Player player) {
 //            String username = urlifyString(player.getName());
             String url = apiUrlBase.concat("/tag/createPartyGame");
-            GamePlayer gamePlayer = createGamePlayerObject(player);
 
             try
             {
                 Request r = new Request.Builder()
                         .url(url)
 //                        .post(RequestBody.create(JSON, gson.toJson(player)))
-                        .post(RequestBody.create(JSON, gson.toJson(gamePlayer)))
+                        .post(RequestBody.create(JSON, gson.toJson(createGamePlayerObject(player))))
                         .build();
 
                 okHttpClient.newCall(r).enqueue(new Callback()
@@ -95,13 +97,14 @@ public class ConnectionManager {
                     }
 
                     @Override
-                    public void onResponse(Call call, Response response)
-                    {
+                    public void onResponse(Call call, Response response) throws IOException {
                         if (response.isSuccessful())
                         {
                             System.out.println("Successfully sent prop hunt data");
-                            System.out.println(response.body().);
-                            System.out.println(call);
+                            System.out.println(response.body().string());
+                            partyGame = gson.fromJson(response.body().string(), PartyGame.class);
+                            gamePlayer = partyGame.gamePlayer;
+                            System.out.println(partyGame);
                             response.close();
                         }
                         else
